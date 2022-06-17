@@ -1,6 +1,6 @@
 export const ROUTE = {
   Landing: '/',
-  Desinger: '/designer',
-  DesingerDetail: '/designer/:designerId',
+  Designer: '/designer',
+  DesignerDetail: '/designer/:designerId',
   Project: '/project',
 } as const;
