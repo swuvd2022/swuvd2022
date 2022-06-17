@@ -6,7 +6,7 @@ declare module 'styled-components' {
     brandColor_2: string;
     brandColor_3: string;
 
-    tablet: string;
+    isNotDesktop: string;
 
     minWidth: string;
   }
