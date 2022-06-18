@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path={ROUTE.Landing} element={<Landing />} />
-        <Route path={ROUTE.Desinger} element={<Designer />} />
-        <Route path={ROUTE.DesingerDetail} element={<DesignerDetail />} />
+        <Route path={ROUTE.Designer} element={<Designer />} />
+        <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
         <Route path={ROUTE.Project} element={<Project />} />
       </Routes>
     </BrowserRouter>
