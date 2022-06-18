@@ -1,15 +1,11 @@
 import 'styled-components';
+import theme from './Theme';
+
+type CustomTheme = typeof theme;
 
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    brandColor_1: string;
-    brandColor_2: string;
-    brandColor_3: string;
-
-    isNotDesktop: string;
-
-    minWidth: string;
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  export interface DefaultTheme extends CustomTheme {}
 
   export interface StyleProps {
     width: string;

@@ -1,11 +1,6 @@
-export const ROUTE: {
-  Landing: string;
-  Desinger: string;
-  DesingerDetail: string;
-  Project: string;
-} = {
+export const ROUTE = {
   Landing: '/',
-  Desinger: '/designer',
-  DesingerDetail: '/designer/:designerId',
+  Designer: '/designer',
+  DesignerDetail: '/designer/:designerId',
   Project: '/project',
-};
+} as const;
