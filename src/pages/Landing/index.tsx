@@ -1,5 +1,7 @@
+import PageTemplate from '../../components/common/PageTemplate';
+
 function Landing() {
-  return <div>Landing</div>;
+  return <PageTemplate>Landing</PageTemplate>;
 }
 
 export default Landing;

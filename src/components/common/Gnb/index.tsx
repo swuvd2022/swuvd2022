@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { ROUTE } from '../../route';
+import { ROUTE } from '../../../route';
 
 const navButtons = {
   About: ROUTE.Landing,
