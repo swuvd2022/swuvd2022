@@ -29,4 +29,8 @@ export const GlobalStyle = createGlobalStyle`
     flex: 1;
     height: 100%;
   }
+
+  li {
+    list-style: none;
+  }
 `;
