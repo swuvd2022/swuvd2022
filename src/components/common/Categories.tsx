@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE } from 'route';
 import styled from 'styled-components';
 
 interface CategoriesProps {
@@ -16,10 +18,19 @@ const Categories = ({
   flexDirection,
   margin,
 }: CategoriesProps) => {
+  const navigate = useNavigate();
+
   return (
     <StyledCategories flexDirection={flexDirection} margin={margin}>
       {categories.map(item => (
-        <StyledCategory key={item} onClick={() => setCategory(item)} active={item === category}>
+        <StyledCategory
+          key={item}
+          onClick={() => {
+            setCategory(item);
+            navigate(ROUTE.Project);
+          }}
+          active={item === category}
+        >
           {item}
         </StyledCategory>
       ))}
