@@ -5,7 +5,8 @@
     "kind": "UXUI",
     "artist": "김의진",
     "email": "gytks4@naver.com",
-    "description": "개발 재밌다!"
+    "description": "개발 재밌다!",
+    "imageCount": 2
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "kind": "BX",
     "artist": "김의진",
     "email": "gytks4@naver.com",
-    "description": "개발 재밌다!"
+    "description": "개발 재밌다!",
+    "imageCount": 2
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "kind": "그래픽",
     "artist": "김의진",
     "email": "gytks4@naver.com",
-    "description": "개발 재밌다!"
+    "description": "개발 재밌다!",
+    "imageCount": 2
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "kind": "출판",
     "artist": "김의진",
     "email": "gytks4@naver.com",
-    "description": "개발 재밌다!"
+    "description": "개발 재밌다!",
+    "imageCount": 2
   },
   {
     "id": 5,
@@ -37,6 +41,7 @@
     "kind": "영상",
     "artist": "김의진",
     "email": "gytks4@naver.com",
-    "description": "개발 재밌다!"
+    "description": "개발 재밌다!",
+    "imageCount": 2
   }
 ]
