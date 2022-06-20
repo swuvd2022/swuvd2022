@@ -5,9 +5,12 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Categories from 'components/common/Categories';
 import CroppedImage from 'components/common/CroppedImgae';
+import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { categoryState } from 'atoms';
 
 function Project() {
-  const [category, setCategory] = useState<typeof projectKind[number]>('All');
+  const [category, setCategory] = useRecoilState(categoryState);
   const [filteredProjects, setFilteredProjects] = useState<ProjectType[]>(projects);
 
   useEffect(() => {
@@ -30,18 +33,18 @@ function Project() {
       />
       <StyledPreviewProjects>
         {filteredProjects.map(project => (
-          <StyledImageWrapper key={project.id}>
+          <StyledLink key={project.id} to={`${project.id}`}>
             <CroppedImage
               src={require(`assets/images/${project.artist}_thumbnail.png`)}
               width='330px'
-              height='220px'
+              ratio='66.67%'
               alt=''
             />
             <StyledHover>
               <h3>{project.title}</h3>
               <h4>{project.artist}</h4>
             </StyledHover>
-          </StyledImageWrapper>
+          </StyledLink>
         ))}
       </StyledPreviewProjects>
     </StyledRoot>
@@ -61,6 +64,8 @@ const StyledTitle = styled.h2`
   position: absolute;
   top: 40px;
   left: 40px;
+  color: ${({ theme }) => theme.brandColor_1};
+  font-weight: 700;
 `;
 
 const StyledPreviewProjects = styled.ul`
@@ -70,7 +75,7 @@ const StyledPreviewProjects = styled.ul`
   height: fit-content;
 `;
 
-const StyledImageWrapper = styled.div`
+const StyledLink = styled(Link)`
   position: relative;
   cursor: pointer;
   &:hover > div {
