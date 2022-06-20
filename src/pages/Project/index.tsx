@@ -4,6 +4,7 @@ import projects from 'fixtures/projects.json';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Categories from 'components/common/Categories';
+import CroppedImage from 'components/common/CroppedImgae';
 
 function Project() {
   const [category, setCategory] = useState<typeof projectKind[number]>('All');
@@ -29,9 +30,18 @@ function Project() {
       />
       <StyledPreviewProjects>
         {filteredProjects.map(project => (
-          <StyledPreviewProject key={project.id}>
-            <img src={require(`assets/images/${project.artist}_thumbnail.png`)} alt='' />
-          </StyledPreviewProject>
+          <StyledImageWrapper key={project.id}>
+            <CroppedImage
+              src={require(`assets/images/${project.artist}_thumbnail.png`)}
+              width='330px'
+              height='220px'
+              alt=''
+            />
+            <StyledHover>
+              <h3>{project.title}</h3>
+              <h4>{project.artist}</h4>
+            </StyledHover>
+          </StyledImageWrapper>
         ))}
       </StyledPreviewProjects>
     </StyledRoot>
@@ -53,22 +63,6 @@ const StyledTitle = styled.h2`
   left: 40px;
 `;
 
-const StyledCategories = styled.ul`
-  margin-right: 106px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  word-break: keep-all;
-  margin-top: 15px;
-`;
-
-const StyledCategory = styled.li<{ active: boolean }>`
-  color: ${({ active, theme }) => (active ? theme.brandColor_1 : theme.brandColor_2)};
-  font-size: 24px;
-  font-weight: 700;
-  cursor: pointer;
-`;
-
 const StyledPreviewProjects = styled.ul`
   display: flex;
   gap: 20px;
@@ -76,8 +70,35 @@ const StyledPreviewProjects = styled.ul`
   height: fit-content;
 `;
 
-const StyledPreviewProject = styled.li`
-  display: inline-block;
-  width: fit-content;
-  height: fit-content;
+const StyledImageWrapper = styled.div`
+  position: relative;
+  cursor: pointer;
+  &:hover > div {
+    display: flex;
+  }
+`;
+
+const StyledHover = styled.div`
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2e319260;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => theme.brandColor_3};
+
+  & > h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    height: 60px;
+  }
+
+  & > h4 {
+    font-size: 14px;
+  }
 `;
