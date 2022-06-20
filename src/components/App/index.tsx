@@ -7,17 +7,18 @@ import Project from '../../pages/Project';
 import { ROUTE } from '../../route';
 import Gnb from '../common/Gnb';
 import styled from 'styled-components';
+import ProjectDetail from 'pages/ProjectDetail.tsx';
 
 function App() {
   return (
     <BrowserRouter>
       <StyledRoot>
-        <Gnb />
         <Routes>
           <Route path={ROUTE.Landing} element={<Landing />} />
           <Route path={ROUTE.Designer} element={<Designer />} />
           <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
           <Route path={ROUTE.Project} element={<Project />} />
+          <Route path={ROUTE.ProjectDetail} element={<ProjectDetail />} />
         </Routes>
       </StyledRoot>
     </BrowserRouter>

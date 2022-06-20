@@ -3,4 +3,5 @@ export const ROUTE = {
   Designer: '/designer',
   DesignerDetail: '/designer/:designerId',
   Project: '/project',
+  ProjectDetail: '/project/:projectId',
 } as const;
