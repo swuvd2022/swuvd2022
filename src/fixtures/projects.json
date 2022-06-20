@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "서울여대",
+    "kind": "UXUI",
+    "artist": "김의진",
+    "email": "gytks4@naver.com",
+    "description": "개발 재밌다!"
+  },
+  {
+    "id": 2,
+    "title": "서울여대",
+    "kind": "BX",
+    "artist": "김의진",
+    "email": "gytks4@naver.com",
+    "description": "개발 재밌다!"
+  },
+  {
+    "id": 3,
+    "title": "서울여대",
+    "kind": "그래픽",
+    "artist": "김의진",
+    "email": "gytks4@naver.com",
+    "description": "개발 재밌다!"
+  },
+  {
+    "id": 4,
+    "title": "서울여대",
+    "kind": "출판",
+    "artist": "김의진",
+    "email": "gytks4@naver.com",
+    "description": "개발 재밌다!"
+  },
+  {
+    "id": 5,
+    "title": "서울여대",
+    "kind": "영상",
+    "artist": "김의진",
+    "email": "gytks4@naver.com",
+    "description": "개발 재밌다!"
+  }
+]
