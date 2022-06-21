@@ -59,6 +59,7 @@ const StyledRoot = styled.div`
   position: relative;
   padding-top: 212px;
   padding-left: 40px;
+  padding-right: 120px;
   width: 100%;
 `;
 
