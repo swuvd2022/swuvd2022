@@ -1,16 +1,26 @@
-import { useQuery } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 import styled from 'styled-components';
 import CroppedImage from './CroppedImage';
 import { useParams } from 'react-router-dom';
-import { getComments } from 'apis';
+import { addComment, getComments } from 'apis';
 import { Comment } from 'types/domain';
 import usePagination from 'hooks/usePagination';
 import Pagination from './Pagination';
+import useInput from 'hooks/useInput';
+import { pagination_page_count, pagination_count } from 'constants/index';
 
 const GuestBook = () => {
   const { projectId: id } = useParams();
+  const [name, setName] = useInput();
+  const [message, setMessage] = useInput();
+  const queryClient = useQueryClient();
   const { data: comments } = useQuery<Comment[]>(['comment', id], () => getComments(id));
-  const lastIndex = Math.floor(comments?.length / 5) + 1;
+  const { mutate } = useMutation(addComment, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(['comment', id]);
+    },
+  });
+  const lastIndex = Math.floor((comments?.length - 1) / pagination_count) + 1;
   const { currentPage, pageStartNumber, handleChange } = usePagination({
     count: 5,
     lastIndex,
@@ -26,25 +36,47 @@ const GuestBook = () => {
           width='100%'
           height='161px'
         />
-        <StyledInput type='text' placeholder='이름' />
-        <StyledTextArea placeholder='축하의 말을 남겨주세요.' />
-        <StyledButton>등록</StyledButton>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            mutate({ id, name, message });
+          }}
+        >
+          <StyledInput
+            type='text'
+            placeholder='이름'
+            maxLength={10}
+            value={name}
+            onChange={setName}
+            required
+          />
+          <StyledTextArea
+            placeholder='축하의 말을 남겨주세요.'
+            maxLength={150}
+            value={message}
+            onChange={setMessage}
+            required
+          />
+          <StyledButton>등록</StyledButton>
+        </form>
       </StyledInputContainer>
       <StyledComments>
-        {comments?.slice((currentPage - 1) * 5, currentPage * 5).map(comment => (
-          <StyledComment key={comment.id}>
-            <StyledTop>
-              <span>{comment.name}</span>
-              <span>{comment.createdDate}</span>
-            </StyledTop>
-            <StyledBottom>{comment.message}</StyledBottom>
-          </StyledComment>
-        ))}
+        {comments
+          ?.slice((currentPage - 1) * pagination_count, currentPage * pagination_count)
+          .map(comment => (
+            <StyledComment key={comment.id}>
+              <StyledTop>
+                <span>{comment.name}</span>
+                <span>{comment.createdDate}</span>
+              </StyledTop>
+              <StyledBottom>{comment.message}</StyledBottom>
+            </StyledComment>
+          ))}
         <Pagination
           currentPage={currentPage}
           handleChange={handleChange}
           pageStartNumber={pageStartNumber}
-          count={10}
+          count={pagination_page_count}
           lastIndex={lastIndex}
         />
       </StyledComments>
@@ -77,6 +109,12 @@ const StyledInputContainer = styled.div`
   gap: 13px;
   border-radius: 14px;
   border: 1px solid ${({ theme }) => theme.brandColor_1};
+
+  & > form {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
 `;
 
 const StyledInput = styled.input`

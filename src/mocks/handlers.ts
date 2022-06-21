@@ -8,6 +8,15 @@ export const handlers = [
 
     return res(ctx.status(200), ctx.json(comments[productId - 1]));
   }),
+
+  rest.post<{ name: string; message: string }>(`${BASE_URL}/guestbook?id=:id`, (req, res, ctx) => {
+    const productId = Number(req.url.searchParams.get('id'));
+    const body = req.body;
+    const response = { id: comments[productId - 1].length + 1, createdDate: '20220624', ...body };
+    comments[productId - 1] = [...comments[productId - 1], response];
+
+    return res(ctx.status(200), ctx.json(response));
+  }),
 ];
 
 const comments: Comment[][] = [
