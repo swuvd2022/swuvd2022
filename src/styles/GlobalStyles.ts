@@ -35,4 +35,13 @@ export const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  input, textarea {
+    outline: none;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+  }
 `;

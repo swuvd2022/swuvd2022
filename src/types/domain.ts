@@ -8,3 +8,10 @@ export interface ProjectType {
   email: string;
   description: string;
 }
+
+export interface Comment {
+  id: number;
+  name: string;
+  message: string;
+  createdDate: string;
+}

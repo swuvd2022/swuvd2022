@@ -4,7 +4,7 @@ import projects from 'fixtures/projects.json';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Categories from 'components/common/Categories';
-import CroppedImage from 'components/common/CroppedImgae';
+import CroppedImage from 'components/common/CroppedImage';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { categoryState } from 'atoms';

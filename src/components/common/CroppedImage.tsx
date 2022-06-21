@@ -4,12 +4,13 @@ interface CroppedImageProps {
   src: string;
   alt: string;
   width?: string;
-  ratio: string;
+  ratio?: string;
+  height?: string;
 }
 
-const CroppedImage = ({ src, width, ratio, alt }: CroppedImageProps) => {
+const CroppedImage = ({ src, width, ratio, height, alt }: CroppedImageProps) => {
   return (
-    <StyledImageWrapper width={width} ratio={ratio}>
+    <StyledImageWrapper width={width} ratio={ratio} height={height}>
       <StyledImage src={src} alt={alt} />
     </StyledImageWrapper>
   );
@@ -17,11 +18,11 @@ const CroppedImage = ({ src, width, ratio, alt }: CroppedImageProps) => {
 
 export default CroppedImage;
 
-const StyledImageWrapper = styled.div<Pick<CroppedImageProps, 'width' | 'ratio'>>`
+const StyledImageWrapper = styled.div<Pick<CroppedImageProps, 'width' | 'ratio' | 'height'>>`
   position: relative;
   width: ${({ width }) => width || '100%'};
   height: 0;
-  padding-bottom: ${({ ratio }) => ratio};
+  padding-bottom: ${({ ratio, height }) => (ratio ? ratio : height)};
   overflow: hidden;
 `;
 

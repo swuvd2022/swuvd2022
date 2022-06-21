@@ -6,7 +6,8 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import projects from 'fixtures/projects.json';
 import NotFound from 'pages/NotFound/NotFound';
-import CroppedImage from 'components/common/CroppedImgae';
+import CroppedImage from 'components/common/CroppedImage';
+import GuestBook from 'components/common/GuestBook';
 
 const ProjectDetail = () => {
   const projectId = Number(useParams().projectId);
@@ -45,6 +46,7 @@ const ProjectDetail = () => {
               alt=''
             />
           ))}
+        <GuestBook />
       </StyledProject>
     </StyledRoot>
   );
