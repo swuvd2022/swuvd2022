@@ -8,6 +8,7 @@ import projects from 'fixtures/projects.json';
 import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
+import PageTemplate from 'components/common/PageTemplate';
 
 const ProjectDetail = () => {
   const projectId = Number(useParams().projectId);
@@ -19,36 +20,38 @@ const ProjectDetail = () => {
   const { title, artist, email, description, imageCount } = project;
 
   return (
-    <StyledRoot>
-      <Categories
-        categories={projectKind}
-        category={category}
-        setCategory={setCategory}
-        flexDirection='column'
-        margin='15px 106px 0 0'
-      />
-      <StyledProject>
-        <StyledTexts>
-          <StyledLeft>
-            <h3>{title}</h3>
-            <h4>{artist}</h4>
-            <div>{email}</div>
-          </StyledLeft>
-          <p>{description}</p>
-        </StyledTexts>
-        {Array(imageCount)
-          .fill('')
-          .map((_, index) => (
-            <CroppedImage
-              key={index}
-              src={require(`assets/images/${artist}_detail_${index + 1}.png`)}
-              ratio='37.5%'
-              alt=''
-            />
-          ))}
-        <GuestBook />
-      </StyledProject>
-    </StyledRoot>
+    <PageTemplate>
+      <StyledRoot>
+        <Categories
+          categories={projectKind}
+          category={category}
+          setCategory={setCategory}
+          flexDirection='column'
+          margin='15px 106px 0 0'
+        />
+        <StyledProject>
+          <StyledTexts>
+            <StyledLeft>
+              <h3>{title}</h3>
+              <h4>{artist}</h4>
+              <div>{email}</div>
+            </StyledLeft>
+            <p>{description}</p>
+          </StyledTexts>
+          {Array(imageCount)
+            .fill('')
+            .map((_, index) => (
+              <CroppedImage
+                key={index}
+                src={require(`assets/images/${artist}_detail_${index + 1}.png`)}
+                ratio='37.5%'
+                alt=''
+              />
+            ))}
+          <GuestBook />
+        </StyledProject>
+      </StyledRoot>
+    </PageTemplate>
   );
 };
 

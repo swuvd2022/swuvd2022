@@ -8,6 +8,7 @@ import CroppedImage from 'components/common/CroppedImage';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { categoryState } from 'atoms';
+import PageTemplate from 'components/common/PageTemplate';
 
 function Project() {
   const [category, setCategory] = useRecoilState(categoryState);
@@ -22,32 +23,34 @@ function Project() {
   }, [category]);
 
   return (
-    <StyledRoot>
-      <StyledTitle>Project</StyledTitle>
-      <Categories
-        categories={projectKind}
-        category={category}
-        setCategory={setCategory}
-        flexDirection='column'
-        margin='15px 106px 0 0'
-      />
-      <StyledPreviewProjects>
-        {filteredProjects.map(project => (
-          <StyledLink key={project.id} to={`${project.id}`}>
-            <CroppedImage
-              src={require(`assets/images/${project.artist}_thumbnail.png`)}
-              width='330px'
-              ratio='66.67%'
-              alt=''
-            />
-            <StyledHover>
-              <h3>{project.title}</h3>
-              <h4>{project.artist}</h4>
-            </StyledHover>
-          </StyledLink>
-        ))}
-      </StyledPreviewProjects>
-    </StyledRoot>
+    <PageTemplate>
+      <StyledRoot>
+        <StyledTitle>Project</StyledTitle>
+        <Categories
+          categories={projectKind}
+          category={category}
+          setCategory={setCategory}
+          flexDirection='column'
+          margin='15px 106px 0 0'
+        />
+        <StyledPreviewProjects>
+          {filteredProjects.map(project => (
+            <StyledLink key={project.id} to={`${project.id}`}>
+              <CroppedImage
+                src={require(`assets/images/${project.artist}_thumbnail.png`)}
+                width='330px'
+                ratio='66.67%'
+                alt=''
+              />
+              <StyledHover>
+                <h3>{project.title}</h3>
+                <h4>{project.artist}</h4>
+              </StyledHover>
+            </StyledLink>
+          ))}
+        </StyledPreviewProjects>
+      </StyledRoot>
+    </PageTemplate>
   );
 }
 

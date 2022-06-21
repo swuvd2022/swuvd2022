@@ -34,7 +34,7 @@ const GuestBook = () => {
           src={require('assets/images/guestbook.png')}
           alt=''
           width='100%'
-          height='161px'
+          ratio='36.42%'
         />
         <form
           onSubmit={e => {
@@ -113,6 +113,7 @@ const StyledInputContainer = styled.div`
   & > form {
     display: flex;
     flex-direction: column;
+    height: 100%;
     gap: 13px;
   }
 `;
@@ -133,7 +134,7 @@ const StyledTextArea = styled.textarea`
   border-radius: 8px;
   padding: 12px;
   resize: none;
-  height: 461px;
+  height: 504px;
   ::placeholder {
     color: ${({ theme }) => theme.brandColor_1};
   }
@@ -151,7 +152,7 @@ const StyledComments = styled.div`
   width: 100%;
   border-radius: 14px;
   border: 1px solid ${({ theme }) => theme.brandColor_1};
-  padding: 28px 20px;
+  padding: 28px 20px 78px;
   display: flex;
   flex-direction: column;
   gap: 11px;

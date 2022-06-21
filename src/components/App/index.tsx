@@ -26,9 +26,9 @@ function App() {
             <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
           </>
         )}
+        <Route path={ROUTE.Project} element={<Project />} />
+        <Route path={ROUTE.ProjectDetail} element={<ProjectDetail />} />
       </Routes>
-      <Route path={ROUTE.Project} element={<Project />} />
-      <Route path={ROUTE.ProjectDetail} element={<ProjectDetail />} />
     </BrowserRouter>
   );
 }
