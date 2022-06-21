@@ -3,25 +3,27 @@ import styled, { css } from 'styled-components';
 interface PaginationProps {
   currentPage: number;
   lastIndex: number;
-  handleChange: (number) => () => void;
+  handleChange: (number: number) => () => void;
   pageStartNumber: number;
   count: number;
 }
 
-const Pagination = ({
-  currentPage,
-  handleChange,
-  pageStartNumber,
-  count,
-  lastIndex,
-}: PaginationProps) => {
+const Pagination = ({ currentPage, handleChange, count, lastIndex }: PaginationProps) => {
   return (
     <StyledRoot>
       {Array.from({ length: count }, (_, index: number) => {
-        const page = pageStartNumber + index + 1;
-        const shouldShowPage = page <= lastIndex;
+        let page: number;
+        if (currentPage < Math.floor((1 + count) / 2)) {
+          page = index + 1;
 
-        if (!shouldShowPage) return null;
+          const shouldShowPage = page <= lastIndex;
+
+          if (!shouldShowPage) return null;
+        } else if (currentPage > lastIndex - Math.floor((1 + count) / 2)) {
+          page = lastIndex - (count - index - 1);
+        } else {
+          page = currentPage - (Math.floor((1 + count) / 2) - 1) + index;
+        }
 
         return (
           <StyledPageIndicator
@@ -33,6 +35,7 @@ const Pagination = ({
           </StyledPageIndicator>
         );
       })}
+      {}
     </StyledRoot>
   );
 };
