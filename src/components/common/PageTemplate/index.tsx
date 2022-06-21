@@ -15,5 +15,6 @@ export default PageTemplate;
 const StyledRoot = styled.div`
   display: flex;
   position: relative;
+
   height: 100%;
 `;

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import useResponsive from '../../../hooks/useResponsive';
 import { ROUTE } from '../../../route';
 
 const navButtons = {
@@ -11,22 +12,39 @@ const navButtons = {
 const Gnb = () => {
   const location = useLocation();
 
+  const isDesktop = useResponsive();
+
   return (
     <StyledRoot>
       <StyledContainer>
         <StyledTop>
           <h1>제39회 서울여자대학교 시각디자인전공 졸업전시회</h1>
           <StyledNav>
-            {Object.keys(navButtons).map(key => (
-              <span key={key}>
-                <StyledLink
-                  to={navButtons[key]}
-                  active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
-                >
-                  {key}
-                </StyledLink>
-              </span>
-            ))}
+            {Object.keys(navButtons).map(key => {
+              if (key === 'Designer') {
+                return (
+                  <span key={key}>
+                    <StyledLink
+                      to={isDesktop ? '/designer/1' : navButtons[key]}
+                      active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                    >
+                      {key}
+                    </StyledLink>
+                  </span>
+                );
+              }
+
+              return (
+                <span key={key}>
+                  <StyledLink
+                    to={navButtons[key]}
+                    active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                  >
+                    {key}
+                  </StyledLink>
+                </span>
+              );
+            })}
           </StyledNav>
         </StyledTop>
         <StyledBottom>
@@ -58,9 +76,9 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   box-shadow: 5px 0 10px rgba(0, 0, 0, 5%);
 `;
 
