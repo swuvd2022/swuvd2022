@@ -1,5 +1,5 @@
 export const enum size {
-  tablet = 768,
+  tablet = 1024,
 }
 
 const theme = {
