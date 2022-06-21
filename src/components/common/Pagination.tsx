@@ -18,9 +18,10 @@ const Pagination = ({ currentPage, handleChange, count, lastIndex }: PaginationP
 
           const shouldShowPage = page <= lastIndex;
 
-          if (!shouldShowPage) return null;
+          if (!shouldShowPage) return;
         } else if (currentPage > lastIndex - Math.floor((1 + count) / 2)) {
           page = lastIndex - (count - index - 1);
+          if (page < 1) return;
         } else {
           page = currentPage - (Math.floor((1 + count) / 2) - 1) + index;
         }

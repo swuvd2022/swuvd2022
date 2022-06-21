@@ -18,12 +18,12 @@ const GuestBook = () => {
   const { mutate } = useMutation(addComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(['comment', id]);
+      handleChange(Math.floor(comments?.length / pagination_count) + 1)();
     },
   });
   const lastIndex = Math.floor((comments?.length - 1) / pagination_count) + 1;
   const { currentPage, pageStartNumber, handleChange } = usePagination({
     count: 5,
-    lastIndex,
   });
 
   return (
@@ -162,6 +162,7 @@ const StyledComment = styled.div`
   display: flex;
   gap: 11px;
   flex-direction: column;
+  width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.brandColor_1};
   padding-bottom: 20px;
 `;
