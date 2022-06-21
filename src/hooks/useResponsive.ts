@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { size } from '../styles/Theme';
 const checkIsDesktop = () => {
-  const {
-    visualViewport: { width: vw },
-  } = window;
+  const { innerWidth } = window;
 
-  if (vw > size.tablet) {
+  if (innerWidth > size.tablet) {
     return true;
   }
 
