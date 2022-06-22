@@ -102,13 +102,31 @@ export default GuestBook;
 const StyledRoot = styled.div<{ isDesktop: boolean }>`
   width: 100%;
   position: relative;
-  padding-top: 123px;
   padding-bottom: 46px;
   display: flex;
-  flex-direction: ${({ isDesktop }) => (isDesktop ? 'row' : 'column')};
+  ${({ isDesktop }) =>
+    isDesktop
+      ? css`
+          flex-direction: row;
+          padding-top: 123px;
+        `
+      : css`
+          flex-direction: column;
+          padding-top: 95px;
+        `}
   gap: 34px;
 
   & > h2 {
+    ${({ isDesktop }) =>
+      isDesktop
+        ? css`
+            font-size: 23px;
+            top: 45px;
+          `
+        : css`
+            font-size: 18px;
+          `}
+    font-size: ${({ isDesktop }) => (isDesktop ? '23px' : '18px')};
     position: absolute;
     top: 45px;
     left: 0;
