@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import projects from 'fixtures/projects.json';
 import { useParams } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import { categoryState } from 'atoms';
 import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
@@ -10,12 +8,11 @@ import PageTemplate from 'components/common/PageTemplate';
 
 const ProjectDetailMobile = () => {
   const projectId = Number(useParams().projectId);
-  const [category, setCategory] = useRecoilState(categoryState);
 
   const project = projects.find(project => project.id === projectId);
   if (!project) return <NotFound />;
 
-  const { title, artist, email, description, imageCount } = project;
+  const { title, artist, description, imageCount } = project;
 
   return (
     <PageTemplate>
