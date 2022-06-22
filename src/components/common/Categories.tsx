@@ -30,6 +30,7 @@ const Categories = ({
             navigate(ROUTE.Project);
           }}
           active={item === category}
+          flexDirection={flexDirection}
         >
           {item}
         </StyledCategory>
@@ -48,9 +49,9 @@ const StyledCategories = styled.ul<{ flexDirection: 'column' | 'row'; margin: st
   word-break: keep-all;
 `;
 
-const StyledCategory = styled.li<{ active: boolean }>`
+const StyledCategory = styled.li<{ active: boolean; flexDirection: 'column' | 'row' }>`
   color: ${({ active, theme }) => (active ? theme.brandColor_1 : theme.brandColor_2)};
-  font-size: 24px;
+  font-size: ${({ flexDirection }) => (flexDirection === 'column' ? '24px' : '14px')};
   font-weight: 700;
   cursor: pointer;
 `;
