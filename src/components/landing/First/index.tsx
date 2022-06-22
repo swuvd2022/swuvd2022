@@ -4,6 +4,7 @@ import { Down, Up } from '../../../pages/Landing';
 import 화살표 from '../../svg/화살표';
 const FirstWrapper = styled.div`
   height: 100vh;
+  min-width: 900px;
 
   & > img {
     width: 100%;
@@ -27,7 +28,7 @@ const FirstWrapper = styled.div`
   position: relative;
 `;
 
-function First({ type }: { type: number }) {
+function First() {
   return (
     <FirstWrapper>
       <img src='../images/하이_1.png' alt='이미지' />

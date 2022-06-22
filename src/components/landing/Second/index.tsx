@@ -59,7 +59,7 @@ const Description = styled.p`
   line-height: 2.58;
 `;
 
-function Second({ type }: { type: number }) {
+function Second() {
   return (
     <SecondWrapper>
       <img src='../images/세로.png' alt='gkdl' />

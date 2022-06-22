@@ -1,9 +1,9 @@
+import { Up } from 'pages/Landing';
 import React from 'react';
 import styled from 'styled-components';
-import { Down, Up } from '../../../pages/Landing';
 import 화살표 from '../../svg/화살표';
 
-function Third({ type }: { type: number }) {
+function Third() {
   return (
     <div style={{ position: 'relative' }}>
       <Up>

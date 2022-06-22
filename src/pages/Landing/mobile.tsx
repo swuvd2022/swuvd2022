@@ -12,12 +12,12 @@ const Container = styled.div`
 `;
 
 const FirstWrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
 
   & > img {
     width: 100%;
 
-    min-height: 90vh;
+    min-height: 80vh;
     object-fit: cover;
     object-position: top;
   }
@@ -167,7 +167,15 @@ const DeveloperContainer = styled.div`
     }
   }
 
-  padding-bottom: 20px;
+  & .up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
 `;
 
 function LandingMobile() {
@@ -319,6 +327,10 @@ function LandingMobile() {
               <div>
                 <h3>개발</h3>
                 <span>김의진</span>
+              </div>
+
+              <div className='up'>
+                <화살표모바일 />
               </div>
             </DeveloperContainer>
           </section>

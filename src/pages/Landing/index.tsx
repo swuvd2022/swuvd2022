@@ -1,65 +1,93 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import PageTemplate from '../../components/common/PageTemplate';
 import First from '../../components/landing/First';
 import Second from '../../components/landing/Second';
 import Third from '../../components/landing/Third';
-import 화살표 from '../../components/svg/화살표';
 
 function Landing() {
-  const [type, setType] = useState(0);
-
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const timeout: { current: null | NodeJS.Timeout } = {
-      current: null,
-    };
+  const ref = useRef({ timeout: null, isScrolling: false });
 
-    const wheelHandler = (e: WheelEvent) => {
-      e.preventDefault();
+  const type = useRef(0);
 
-      if (timeout.current) {
-        clearTimeout(timeout.current);
+  const wheelHandler = useCallback((e: WheelEvent) => {
+    if (e.deltaY === 0) {
+      return;
+    }
+
+    e.preventDefault();
+
+    if (ref.current.isScrolling) {
+      return;
+    }
+
+    if (e.deltaY === 0) {
+      return;
+    }
+
+    const isUpScroll = e.deltaY < 0;
+
+    ref.current.isScrolling = true;
+
+    if (isUpScroll) {
+      if (type.current === 0) {
+        ref.current.isScrolling = false;
+
+        return;
       }
 
-      timeout.current = setTimeout(() => {
-        if (e.deltaY === 0) {
-          return;
-        }
+      type.current = type.current === 0 ? 0 : type.current - 1;
 
-        const isUpScroll = e.deltaY < 0;
+      scrollRef.current?.scrollTo({
+        top: window.innerHeight * type.current,
+        behavior: 'smooth',
+      });
 
-        if (isUpScroll) {
-          setType(prev => (prev === 0 ? 0 : prev - 1));
-          return;
-        }
+      return;
+    }
 
-        setType(prev => (prev === 2 ? 2 : prev + 1));
-      }, 60);
-    };
+    if (type.current === 2) {
+      ref.current.isScrolling = false;
+
+      return;
+    }
+
+    type.current = type.current === 2 ? 2 : type.current + 1;
+    scrollRef.current?.scrollTo({
+      top: window.innerHeight * type.current,
+      behavior: 'smooth',
+    });
+  }, []);
+
+  useEffect(() => {
     scrollRef.current?.addEventListener('wheel', wheelHandler, { passive: false });
 
     return () => {
       scrollRef.current?.removeEventListener('wheel', wheelHandler);
     };
-  }, []);
-
-  useEffect(() => {
-    scrollRef.current?.scrollTo({ top: window.innerHeight * type, behavior: 'smooth' });
-  }, [type]);
+  }, [wheelHandler]);
 
   return (
     <PageTemplate>
       <Container
         onScroll={e => {
           e.preventDefault();
+
+          if (ref.current.timeout) {
+            clearTimeout(ref.current.timeout);
+          }
+
+          ref.current.timeout = setTimeout(() => {
+            ref.current.isScrolling = false;
+          }, 500);
         }}
         ref={scrollRef}
       >
-        {<First type={type} />}
-        {<Second type={type} />}
-        {<Third type={type} />}
+        {<First />}
+        {<Second />}
+        {<Third />}
       </Container>
     </PageTemplate>
   );
