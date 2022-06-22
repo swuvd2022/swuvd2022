@@ -5,6 +5,7 @@ import Designer from '../../pages/Designer';
 import DesignerDetail from '../../pages/DesignerDetail';
 import Landing from '../../pages/Landing';
 import Project from '../../pages/Project';
+import ProjectDetail from '../../pages/ProjectDetail.tsx';
 import { ROUTE } from '../../route';
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
             <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
           </>
         )}
-
         <Route path={ROUTE.Project} element={<Project />} />
+        <Route path={ROUTE.ProjectDetail} element={<ProjectDetail />} />
       </Routes>
     </BrowserRouter>
   );
