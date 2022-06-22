@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Image from '../../components/common/Image';
 import { getDesigner } from '../../util/designers';
 
-const InformationItem = ({ title, text }) => {
+export const InformationItem = ({ title, text }: { title: string; text: string }) => {
   return (
     <StyledInformationItemWrapper>
       <StyledInformationTitle>{title}</StyledInformationTitle>

@@ -1,6 +1,7 @@
 import useResponsive from 'hooks/useResponsive';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
+import useResponsive from '../../../hooks/useResponsive';
 import Gnb from '../Gnb';
 import MobileGnb from '../Gnb/mobile';
 

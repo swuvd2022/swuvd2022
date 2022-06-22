@@ -4,8 +4,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useResponsive from '../../hooks/useResponsive';
 
 import Designer from '../../pages/Designer';
+import DesignerMobile from '../../pages/Designer/mobile';
 import DesignerDetail from '../../pages/DesignerDetail';
+import DesignerDetailMobile from '../../pages/DesignerDetail/mobile';
 import Landing from '../../pages/Landing';
+import LandingMobile from '../../pages/Landing/mobile';
 import Project from '../../pages/Project';
 import ProjectDetail from '../../pages/ProjectDetail.tsx';
 import { ROUTE } from '../../route';
@@ -16,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={ROUTE.Landing} element={<Landing />} />
+        <Route path={ROUTE.Landing} element={isDesktop ? <Landing /> : <LandingMobile />} />
 
         {isDesktop ? (
           <>

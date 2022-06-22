@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Down, Up } from '../../../pages/Landing';
+import 화살표 from '../../svg/화살표';
 const SecondWrapper = styled.div`
   display: flex;
   height: 100vh;
-  width: 100%;
+  min-width: 900px;
 
   & > img {
     width: 50%;
@@ -21,6 +23,8 @@ const SecondWrapper = styled.div`
       opacity: 1;
     }
   }
+
+  position: relative;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -55,7 +59,7 @@ const Description = styled.p`
   line-height: 2.58;
 `;
 
-function Second() {
+function Second({ type }: { type: number }) {
   return (
     <SecondWrapper>
       <img src='../images/세로.png' alt='gkdl' />
@@ -79,6 +83,10 @@ function Second() {
           우리는 평화롭게 흩어지는 구름처럼 각자 자유롭게 펼쳐나간다.
         </Description>
       </DescriptionWrapper>
+
+      <Down>
+        <화살표 />
+      </Down>
     </SecondWrapper>
   );
 }

@@ -9,14 +9,14 @@ import 화살표 from '../../components/svg/화살표';
 function Landing() {
   const [type, setType] = useState(0);
 
-  const scrollRef = useRef();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timeout = {
+    const timeout: { current: null | NodeJS.Timeout } = {
       current: null,
     };
 
-    const wheelHandler = e => {
+    const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
 
       if (timeout.current) {
@@ -24,6 +24,10 @@ function Landing() {
       }
 
       timeout.current = setTimeout(() => {
+        if (e.deltaY === 0) {
+          return;
+        }
+
         const isUpScroll = e.deltaY < 0;
 
         if (isUpScroll) {
@@ -32,37 +36,30 @@ function Landing() {
         }
 
         setType(prev => (prev === 2 ? 2 : prev + 1));
-      }, 50);
+      }, 60);
     };
-    (scrollRef.current as HTMLDivElement).addEventListener('wheel', wheelHandler);
+    scrollRef.current?.addEventListener('wheel', wheelHandler, { passive: false });
 
     return () => {
-      (scrollRef?.current as HTMLDivElement)?.removeEventListener('wheel', wheelHandler);
+      scrollRef.current?.removeEventListener('wheel', wheelHandler);
     };
   }, []);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: window.innerHeight * type, behavior: 'smooth' });
+  }, [type]);
 
   return (
     <PageTemplate>
       <Container
         onScroll={e => {
-          console.log('hi');
           e.preventDefault();
         }}
         ref={scrollRef}
       >
-        {type === 0 && <First />}
-        {type === 1 && <Second />}
-        {type === 2 && <Third />}
-
-        {type !== 2 ? (
-          <Down>
-            <화살표 />
-          </Down>
-        ) : (
-          <Up>
-            <화살표 />
-          </Up>
-        )}
+        {<First type={type} />}
+        {<Second type={type} />}
+        {<Third type={type} />}
       </Container>
     </PageTemplate>
   );
@@ -79,7 +76,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const Down = styled.div`
+export const Down = styled.div`
   position: absolute;
 
   bottom: 10px;
@@ -90,11 +87,11 @@ const Down = styled.div`
 
   @keyframes animeDown {
     from {
-      transform: translateY(0);
+      transform: translate(-50%, 0);
     }
 
     to {
-      transform: translateY(5px);
+      transform: translate(-50%, 5px);
     }
   }
 
@@ -112,7 +109,7 @@ const Down = styled.div`
   }
 `;
 
-const Up = styled.div`
+export const Up = styled.div`
   position: absolute;
 
   bottom: 10px;
@@ -123,11 +120,11 @@ const Up = styled.div`
 
   @keyframes animeUp {
     from {
-      transform: rotate(180deg) translateY(0);
+      transform: rotate(180deg) translate(50%, 0);
     }
 
     to {
-      transform: rotate(180deg) translateY(5px);
+      transform: rotate(180deg) translate(50%, 5px);
     }
   }
 
