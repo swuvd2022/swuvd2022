@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE } from 'route';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface CategoriesProps {
   categories: readonly string[];
@@ -44,8 +44,16 @@ export default Categories;
 const StyledCategories = styled.ul<{ flexDirection: 'column' | 'row'; margin: string }>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
+  ${({ flexDirection }) =>
+    flexDirection === 'row'
+      ? css`
+          justify-content: space-between;
+        `
+      : css`
+          gap: 30px;
+        `}
   margin: ${({ margin }) => margin};
-  gap: 30px;
+
   word-break: keep-all;
 `;
 
