@@ -30,7 +30,7 @@ const ProjectMobile = () => {
           category={category}
           setCategory={setCategory}
           flexDirection='row'
-          margin='15px 106px 0 0'
+          margin='15px 0 0 0'
         />
         <StyledPreviewProjects>
           {filteredProjects.map(project => (
@@ -57,7 +57,6 @@ const StyledRoot = styled.div`
   position: relative;
   padding: 0 20px 20px;
   overflow-y: scroll;
-  overflow-x: scroll;
 `;
 
 const StyledTitle = styled.h2`

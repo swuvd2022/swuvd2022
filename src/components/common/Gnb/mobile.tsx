@@ -32,6 +32,7 @@ const MobileGnb = () => {
                     <StyledLink
                       to={isDesktop ? '/designer/1' : navButtons[key]}
                       active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                      onClick={() => setIsOpenNav(false)}
                     >
                       {key}
                     </StyledLink>
@@ -44,6 +45,7 @@ const MobileGnb = () => {
                   <StyledLink
                     to={navButtons[key]}
                     active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                    onClick={() => setIsOpenNav(false)}
                   >
                     {key}
                   </StyledLink>
@@ -113,6 +115,7 @@ const StyledLink = styled(Link)<{ active: number }>`
     active &&
     css`
       text-decoration: ${theme.brandColor_1} underline 3px;
+      -webkit-text-decoration: ${theme.brandColor_1} underline 3px;
       ::after {
         content: '';
         display: inline-block;

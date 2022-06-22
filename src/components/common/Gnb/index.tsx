@@ -105,6 +105,8 @@ const StyledLink = styled(Link)<{ active: number }>`
     active &&
     css`
       text-decoration: ${theme.brandColor_1} underline 3px;
+      -webkit-text-decoration: ${theme.brandColor_1} underline 3px;
+
       ::after {
         content: '';
         display: inline-block;

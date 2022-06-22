@@ -62,6 +62,7 @@ const StyledPageIndicator = styled.button<{ selected?: boolean }>`
     selected &&
     css`
       text-decoration: ${theme.brandColor_1} underline 2px;
+      -webkit-text-decoration: ${theme.brandColor_1} underline 2px;
     `}
 
   width:20px;
