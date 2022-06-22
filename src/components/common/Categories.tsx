@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTE } from 'route';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface CategoriesProps {
   categories: readonly string[];
@@ -30,6 +30,7 @@ const Categories = ({
             navigate(ROUTE.Project);
           }}
           active={item === category}
+          flexDirection={flexDirection}
         >
           {item}
         </StyledCategory>
@@ -43,14 +44,22 @@ export default Categories;
 const StyledCategories = styled.ul<{ flexDirection: 'column' | 'row'; margin: string }>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
+  ${({ flexDirection }) =>
+    flexDirection === 'row'
+      ? css`
+          justify-content: space-between;
+        `
+      : css`
+          gap: 30px;
+        `}
   margin: ${({ margin }) => margin};
-  gap: 30px;
+
   word-break: keep-all;
 `;
 
-const StyledCategory = styled.li<{ active: boolean }>`
+const StyledCategory = styled.li<{ active: boolean; flexDirection: 'column' | 'row' }>`
   color: ${({ active, theme }) => (active ? theme.brandColor_1 : theme.brandColor_2)};
-  font-size: 24px;
+  font-size: ${({ flexDirection }) => (flexDirection === 'column' ? '24px' : '14px')};
   font-weight: 700;
   cursor: pointer;
 `;

@@ -9,21 +9,23 @@ interface PaginationProps {
 }
 
 const Pagination = ({ currentPage, handleChange, count, lastIndex }: PaginationProps) => {
+  console.log('lastIndex', lastIndex);
   return (
     <StyledRoot>
       {Array.from({ length: count }, (_, index: number) => {
         let page: number;
-        if (currentPage < Math.floor((1 + count) / 2)) {
+
+        if (currentPage <= Math.floor(count / 2)) {
           page = index + 1;
 
           const shouldShowPage = page <= lastIndex;
 
           if (!shouldShowPage) return;
-        } else if (currentPage > lastIndex - Math.floor((1 + count) / 2)) {
+        } else if (currentPage >= lastIndex - Math.floor(count / 2) + 1) {
           page = lastIndex - (count - index - 1);
           if (page < 1) return;
         } else {
-          page = currentPage - (Math.floor((1 + count) / 2) - 1) + index;
+          page = currentPage - Math.floor(count / 2) + index;
         }
 
         return (
@@ -60,6 +62,7 @@ const StyledPageIndicator = styled.button<{ selected?: boolean }>`
     selected &&
     css`
       text-decoration: ${theme.brandColor_1} underline 2px;
+      -webkit-text-decoration: ${theme.brandColor_1} underline 2px;
     `}
 
   width:20px;

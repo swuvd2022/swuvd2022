@@ -17,7 +17,9 @@ const MobileGnb = () => {
         <button onClick={() => setIsOpenNav(el => !el)}>
           {isOpenNav ? <ExButton /> : <Hamburger />}
         </button>
-        <MobileLogo />
+        <Link to='/'>
+          <MobileLogo />
+        </Link>
       </StyledHeader>
 
       {isOpenNav && (
@@ -30,6 +32,7 @@ const MobileGnb = () => {
                     <StyledLink
                       to={isDesktop ? '/designer/1' : navButtons[key]}
                       active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                      onClick={() => setIsOpenNav(false)}
                     >
                       {key}
                     </StyledLink>
@@ -42,6 +45,7 @@ const MobileGnb = () => {
                   <StyledLink
                     to={navButtons[key]}
                     active={`/${location.pathname.split('/')[1]}` === navButtons[key] ? 1 : 0}
+                    onClick={() => setIsOpenNav(false)}
                   >
                     {key}
                   </StyledLink>
@@ -111,12 +115,13 @@ const StyledLink = styled(Link)<{ active: number }>`
     active &&
     css`
       text-decoration: ${theme.brandColor_1} underline 3px;
+      -webkit-text-decoration: ${theme.brandColor_1} underline 3px;
       ::after {
         content: '';
         display: inline-block;
         margin-left: 8px;
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background-color: ${theme.brandColor_1};
       }
