@@ -31,8 +31,8 @@ function App() {
           </>
         ) : (
           <>
-            <Route path={ROUTE.Designer} element={<Designer />} />
-            <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
+            <Route path={ROUTE.Designer} element={<DesignerMobile />} />
+            <Route path={ROUTE.DesignerDetail} element={<DesignerDetailMobile />} />
             <Route path={ROUTE.Project} element={<ProjectMobile />} />
             <Route path={ROUTE.ProjectDetail} element={<ProjectDetailMobile />} />
           </>
