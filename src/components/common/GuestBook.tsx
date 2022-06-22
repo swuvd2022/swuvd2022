@@ -115,6 +115,7 @@ const StyledInputContainer = styled.div`
     flex-direction: column;
     height: 100%;
     gap: 13px;
+    flex-basis: 42.8%;
   }
 `;
 
@@ -160,6 +161,7 @@ const StyledComments = styled.div`
   flex-direction: column;
   gap: 11px;
   position: relative;
+  flex-basis: 57.2%;
 `;
 
 const StyledComment = styled.div`
