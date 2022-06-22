@@ -1,4 +1,5 @@
 import ProjectMobile from 'pages/Project/mobile';
+import ProjectDetailMobile from 'pages/ProjectDetail.tsx/mobile';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import useResponsive from '../../hooks/useResponsive';
 
@@ -30,6 +31,7 @@ function App() {
             <Route path={ROUTE.Designer} element={<Designer />} />
             <Route path={ROUTE.DesignerDetail} element={<DesignerDetail />} />
             <Route path={ROUTE.Project} element={<ProjectMobile />} />
+            <Route path={ROUTE.ProjectDetail} element={<ProjectDetailMobile />} />
           </>
         )}
       </Routes>

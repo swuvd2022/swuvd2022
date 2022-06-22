@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import CroppedImage from './CroppedImage';
 import { useParams } from 'react-router-dom';
 import { addComment, getComments } from 'apis';
@@ -7,7 +7,13 @@ import { Comment } from 'types/domain';
 import usePagination from 'hooks/usePagination';
 import Pagination from './Pagination';
 import useInput from 'hooks/useInput';
-import { pagination_page_count, pagination_count } from 'constants/index';
+import {
+  pagination_page_count,
+  pagination_count,
+  pagination_page_count_mobile,
+  pagination_count_mobile,
+} from 'constants/index';
+import useResponsive from 'hooks/useResponsive';
 
 const GuestBook = () => {
   const { projectId: id } = useParams();
@@ -15,19 +21,23 @@ const GuestBook = () => {
   const [message, setMessage] = useInput();
   const queryClient = useQueryClient();
   const { data: comments } = useQuery<Comment[]>(['comment', id], () => getComments(id));
+
+  const isDesktop = useResponsive();
+  const p_page_count = isDesktop ? pagination_page_count : pagination_page_count_mobile;
+  const p_count = isDesktop ? pagination_count : pagination_count_mobile;
   const { mutate } = useMutation(addComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(['comment', id]);
-      handleChange(Math.floor(comments?.length / pagination_count) + 1)();
+      handleChange(Math.floor(comments?.length / p_count) + 1)();
     },
   });
-  const lastIndex = Math.floor((comments?.length - 1) / pagination_count) + 1;
+  const lastIndex = Math.floor((comments?.length - 1) / p_count) + 1;
   const { currentPage, pageStartNumber, handleChange } = usePagination({
     count: 5,
   });
 
   return (
-    <StyledRoot>
+    <StyledRoot isDesktop={isDesktop}>
       <h2>Guestbook</h2>
       <StyledInputContainer>
         <CroppedImage
@@ -40,6 +50,9 @@ const GuestBook = () => {
           onSubmit={e => {
             e.preventDefault();
             mutate({ id, name, message });
+            if (!isDesktop) {
+              window.scrollTo(0, document.body.scrollHeight);
+            }
           }}
         >
           <StyledInput
@@ -48,6 +61,7 @@ const GuestBook = () => {
             maxLength={10}
             value={name}
             onChange={setName}
+            isDesktop={isDesktop}
             required
           />
           <StyledTextArea
@@ -55,28 +69,27 @@ const GuestBook = () => {
             maxLength={150}
             value={message}
             onChange={setMessage}
+            isDesktop={isDesktop}
             required
           />
           <StyledButton>등록</StyledButton>
         </form>
       </StyledInputContainer>
       <StyledComments>
-        {comments
-          ?.slice((currentPage - 1) * pagination_count, currentPage * pagination_count)
-          .map(comment => (
-            <StyledComment key={comment.id}>
-              <StyledTop>
-                <span>{comment.name}</span>
-                <span>{comment.createdDate}</span>
-              </StyledTop>
-              <StyledBottom>{comment.message}</StyledBottom>
-            </StyledComment>
-          ))}
+        {comments?.slice((currentPage - 1) * p_count, currentPage * p_count).map(comment => (
+          <StyledComment key={comment.id}>
+            <StyledTop>
+              <span>{comment.name}</span>
+              <span>{comment.createdDate}</span>
+            </StyledTop>
+            <StyledBottom>{comment.message}</StyledBottom>
+          </StyledComment>
+        ))}
         <Pagination
           currentPage={currentPage}
           handleChange={handleChange}
           pageStartNumber={pageStartNumber}
-          count={pagination_page_count}
+          count={p_page_count}
           lastIndex={lastIndex}
         />
       </StyledComments>
@@ -86,12 +99,13 @@ const GuestBook = () => {
 
 export default GuestBook;
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.div<{ isDesktop: boolean }>`
   width: 100%;
   position: relative;
   padding-top: 123px;
   padding-bottom: 46px;
   display: flex;
+  flex-direction: ${({ isDesktop }) => (isDesktop ? 'row' : 'column')};
   gap: 34px;
 
   & > h2 {
@@ -102,42 +116,59 @@ const StyledRoot = styled.div`
 `;
 
 const StyledInputContainer = styled.div`
-  width: 478px;
   padding: 28px 16px;
   display: flex;
   flex-direction: column;
   gap: 13px;
   border-radius: 14px;
   border: 1px solid ${({ theme }) => theme.brandColor_1};
+  flex-basis: 42.8%;
 
   & > form {
     display: flex;
     flex-direction: column;
     height: 100%;
     gap: 13px;
-    flex-basis: 42.8%;
   }
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.input<{ isDesktop: boolean }>`
   border: 1px solid ${({ theme }) => theme.brandColor_2};
   color: ${({ theme }) => theme.brandColor_1};
   border-radius: 8px;
   padding: 12px;
-  height: 45px;
+  font-size: 14px;
+
+  ${({ isDesktop }) =>
+    isDesktop
+      ? css`
+          height: 45px;
+        `
+      : css`
+          height: 41px;
+        `}
   ::placeholder {
     color: ${({ theme }) => theme.brandColor_1};
   }
 `;
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled.textarea<{ isDesktop: boolean }>`
   border: 1px solid ${({ theme }) => theme.brandColor_2};
   color: ${({ theme }) => theme.brandColor_1};
   border-radius: 8px;
   padding: 12px;
   resize: none;
   flex: 1;
-  min-height: 461px;
-  height: 100%;
+  font-size: 14px;
+
+  ${({ isDesktop }) =>
+    isDesktop
+      ? css`
+          min-height: 461px;
+          height: 100%;
+        `
+      : css`
+          height: 120px;
+        `}
   ::placeholder {
     color: ${({ theme }) => theme.brandColor_1};
   }
@@ -162,6 +193,7 @@ const StyledComments = styled.div`
   gap: 11px;
   position: relative;
   flex-basis: 57.2%;
+  font-size: 14px;
 `;
 
 const StyledComment = styled.div`

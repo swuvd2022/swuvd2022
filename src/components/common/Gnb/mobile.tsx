@@ -115,8 +115,8 @@ const StyledLink = styled(Link)<{ active: number }>`
         content: '';
         display: inline-block;
         margin-left: 8px;
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         background-color: ${theme.brandColor_1};
       }
