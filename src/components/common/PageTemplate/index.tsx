@@ -1,10 +1,15 @@
+import useResponsive from 'hooks/useResponsive';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 import Gnb from '../Gnb';
+import MobileGnb from '../Gnb/mobile';
 
-function PageTemplate({ children }) {
+function PageTemplate({ children }: { children: ReactNode }) {
+  const isDesktop = useResponsive();
+
   return (
-    <StyledRoot>
-      <Gnb />
+    <StyledRoot flexDirection={isDesktop ? 'row' : 'column'}>
+      {isDesktop ? <Gnb /> : <MobileGnb />}
       {children}
     </StyledRoot>
   );
@@ -12,8 +17,9 @@ function PageTemplate({ children }) {
 
 export default PageTemplate;
 
-const StyledRoot = styled.div`
+const StyledRoot = styled.div<{ flexDirection: 'column' | 'row' }>`
   display: flex;
+  flex-direction: ${({ flexDirection }) => flexDirection};
   position: relative;
 
   height: 100%;

@@ -1,24 +1,27 @@
-import { Link, useLocation } from 'react-router-dom';
+import { ReactComponent as MobileLogo } from 'assets/images/mobile-logo.svg';
+import { ReactComponent as Hamburger } from 'assets/icons/hamburger.svg';
+import { ReactComponent as ExButton } from 'assets/icons/ex-button.svg';
 import styled, { css } from 'styled-components';
-import useResponsive from '../../../hooks/useResponsive';
-import { ROUTE } from '../../../route';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { navButtons } from '.';
+import useResponsive from 'hooks/useResponsive';
 
-export const navButtons = {
-  About: ROUTE.Landing,
-  Project: ROUTE.Project,
-  Designer: ROUTE.Designer,
-};
-
-const Gnb = () => {
-  const location = useLocation();
-
+const MobileGnb = () => {
+  const [isOpenNav, setIsOpenNav] = useState(false);
   const isDesktop = useResponsive();
 
   return (
-    <StyledRoot>
-      <StyledContainer>
-        <StyledTop>
-          <h1>제39회 서울여자대학교 시각디자인전공 졸업전시회</h1>
+    <StyledRoot isOpenNav={isOpenNav}>
+      <StyledHeader>
+        <button onClick={() => setIsOpenNav(el => !el)}>
+          {isOpenNav ? <ExButton /> : <Hamburger />}
+        </button>
+        <MobileLogo />
+      </StyledHeader>
+
+      {isOpenNav && (
+        <StyledContent>
           <StyledNav>
             {Object.keys(navButtons).map(key => {
               if (key === 'Designer') {
@@ -46,49 +49,51 @@ const Gnb = () => {
               );
             })}
           </StyledNav>
-        </StyledTop>
-        <StyledBottom>
-          조형예술관 바롬전시갤러리
-          <br />
-          22.07.07(목) - 07.17(일)
-          <br />
-          AM 10:00 - PM 20:00
-        </StyledBottom>
-      </StyledContainer>
+          <StyledBottom>
+            조형예술관 바롬전시갤러리
+            <br />
+            22.07.07(목) - 07.17(일)
+            <br />
+            AM 10:00 - PM 20:00
+          </StyledBottom>
+        </StyledContent>
+      )}
     </StyledRoot>
   );
 };
 
-export default Gnb;
+export default MobileGnb;
 
-const StyledRoot = styled.div`
-  height: 100%;
-  width: 348px;
+const StyledRoot = styled.div<{ isOpenNav: boolean }>`
+  padding: 20px;
+
+  ${({ isOpenNav }) =>
+    isOpenNav &&
+    css`
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+    `}
 `;
 
-const StyledContainer = styled.div`
-  height: 100%;
-  width: 348px;
-  padding: 40px;
-  color: ${({ theme }) => theme.brandColor_1};
-  background-color: ${({ theme }) => theme.brandColor_3};
-  font-size: 24px;
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
-  box-shadow: 5px 0 10px rgba(0, 0, 0, 5%);
-`;
-
-const StyledTop = styled.div`
-  & > h1 {
-    font-weight: 700;
-    font-size: inherit;
-    margin-top: 0;
-    margin-bottom: 40px;
-  }
+  height: 100%;
 `;
 
 const StyledNav = styled.nav`
@@ -101,6 +106,7 @@ const StyledLink = styled(Link)<{ active: number }>`
   color: ${({ theme }) => theme.brandColor_1};
   height: 60px;
   line-height: 60px;
+  font-size: 18px;
   ${({ active, theme }) =>
     active &&
     css`
@@ -118,7 +124,7 @@ const StyledLink = styled(Link)<{ active: number }>`
 `;
 
 const StyledBottom = styled.div`
-  font-size: 20px;
-  height: 108px;
-  line-height: 36px;
+  font-size: 14px;
+  height: 96px;
+  line-height: 32px;
 `;

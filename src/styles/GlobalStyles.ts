@@ -43,5 +43,6 @@ export const GlobalStyle = createGlobalStyle`
   button {
     border: none;
     cursor: pointer;
+    background-color: inherit;
   }
 `;

@@ -64,6 +64,8 @@ const StyledRoot = styled.div`
   padding-left: 40px;
   padding-right: 120px;
   width: 100%;
+  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 
 const StyledProject = styled.div`

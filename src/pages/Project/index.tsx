@@ -61,6 +61,8 @@ const StyledRoot = styled.div`
   position: relative;
   padding-top: 212px;
   padding-left: 40px;
+  overflow-y: scroll;
+  overflow-x: scroll;
 `;
 
 const StyledTitle = styled.h2`
