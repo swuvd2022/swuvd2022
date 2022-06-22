@@ -17,7 +17,9 @@ const MobileGnb = () => {
         <button onClick={() => setIsOpenNav(el => !el)}>
           {isOpenNav ? <ExButton /> : <Hamburger />}
         </button>
-        <MobileLogo />
+        <Link to='/'>
+          <MobileLogo />
+        </Link>
       </StyledHeader>
 
       {isOpenNav && (
