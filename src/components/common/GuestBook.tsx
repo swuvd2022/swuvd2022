@@ -134,7 +134,9 @@ const StyledTextArea = styled.textarea`
   border-radius: 8px;
   padding: 12px;
   resize: none;
-  height: 504px;
+  flex: 1;
+  min-height: 461px;
+  height: 100%;
   ::placeholder {
     color: ${({ theme }) => theme.brandColor_1};
   }
@@ -146,6 +148,7 @@ const StyledButton = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.brandColor_1};
   color: white;
+  font-size: 14px;
 `;
 
 const StyledComments = styled.div`
@@ -175,7 +178,7 @@ const StyledTop = styled.div`
 `;
 
 const StyledBottom = styled.div`
-  height: 80px;
+  min-height: 80px;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.brandColor_2};
   padding: 10px;
