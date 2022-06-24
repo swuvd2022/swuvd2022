@@ -76,15 +76,16 @@ const GuestBook = () => {
         </form>
       </StyledInputContainer>
       <StyledComments>
-        {comments?.slice((currentPage - 1) * p_count, currentPage * p_count).map(comment => (
-          <StyledComment key={comment.id}>
-            <StyledTop>
-              <span>{comment.name}</span>
-              <span>{comment.createdDate}</span>
-            </StyledTop>
-            <StyledBottom>{comment.message}</StyledBottom>
-          </StyledComment>
-        ))}
+        {comments?.length > 0 &&
+          comments?.slice((currentPage - 1) * p_count, currentPage * p_count)?.map(comment => (
+            <StyledComment key={comment.id}>
+              <StyledTop>
+                <span>{comment.name}</span>
+                <span>{comment.createdDate}</span>
+              </StyledTop>
+              <StyledBottom>{comment.message}</StyledBottom>
+            </StyledComment>
+          ))}
         <Pagination
           currentPage={currentPage}
           handleChange={handleChange}

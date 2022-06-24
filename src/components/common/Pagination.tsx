@@ -9,7 +9,6 @@ interface PaginationProps {
 }
 
 const Pagination = ({ currentPage, handleChange, count, lastIndex }: PaginationProps) => {
-  console.log('lastIndex', lastIndex);
   return (
     <StyledRoot>
       {Array.from({ length: count }, (_, index: number) => {
