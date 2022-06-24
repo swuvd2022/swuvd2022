@@ -75,9 +75,9 @@ const GuestBook = () => {
           <StyledButton>등록</StyledButton>
         </form>
       </StyledInputContainer>
-      <StyledComments>
-        {comments?.length > 0 &&
-          comments?.slice((currentPage - 1) * p_count, currentPage * p_count)?.map(comment => (
+      {comments?.length > 0 ? (
+        <StyledComments>
+          {comments?.slice((currentPage - 1) * p_count, currentPage * p_count)?.map(comment => (
             <StyledComment key={comment.id}>
               <StyledTop>
                 <span>{comment.name}</span>
@@ -86,14 +86,19 @@ const GuestBook = () => {
               <StyledBottom>{comment.message}</StyledBottom>
             </StyledComment>
           ))}
-        <Pagination
-          currentPage={currentPage}
-          handleChange={handleChange}
-          pageStartNumber={pageStartNumber}
-          count={p_page_count}
-          lastIndex={lastIndex}
-        />
-      </StyledComments>
+          <Pagination
+            currentPage={currentPage}
+            handleChange={handleChange}
+            pageStartNumber={pageStartNumber}
+            count={p_page_count}
+            lastIndex={lastIndex}
+          />
+        </StyledComments>
+      ) : (
+        <StyledPlaceholder>
+          {isDesktop ? '왼쪽' : '위쪽'} 창을 눌러 축하의 말을 남겨주세요.
+        </StyledPlaceholder>
+      )}
     </StyledRoot>
   );
 };
@@ -114,6 +119,7 @@ const StyledRoot = styled.div<{ isDesktop: boolean }>`
       : css`
           flex-direction: column;
           padding-top: 95px;
+          height: 100%;
         `}
   gap: 34px;
 
@@ -235,4 +241,19 @@ const StyledBottom = styled.div`
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.brandColor_2};
   padding: 10px;
+`;
+
+const StyledPlaceholder = styled.p`
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid ${({ theme }) => theme.brandColor_1};
+  flex-basis: 57.2%;
+  padding: 0 20px;
+  word-break: break-word;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: ${({ theme }) => theme.brandColor_2};
 `;
