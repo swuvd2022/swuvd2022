@@ -9,6 +9,7 @@ import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
+import CroppedVideo from 'components/common/CroppedVideo';
 
 const ProjectDetail = () => {
   const projectId = Number(useParams().projectId);
@@ -17,7 +18,7 @@ const ProjectDetail = () => {
   const project = projects.find(project => project.id === projectId);
   if (!project) return <NotFound />;
 
-  const { title, artist, email, description, imageCount } = project;
+  const { id, title, artist, email, description, isImage, video } = project;
 
   return (
     <PageTemplate>
@@ -38,16 +39,24 @@ const ProjectDetail = () => {
             </StyledLeft>
             <p>{description}</p>
           </StyledTexts>
-          {Array(imageCount)
-            .fill('')
-            .map((_, index) => (
+          {video && (
+            <CroppedVideo
+              width='100%'
+              ratio='56.25%'
+              src='https://www.youtube.com/embed/wa6I_tqpvZU'
+            />
+          )}
+          {isImage && (
+            <>
               <CroppedImage
-                key={index}
-                src={require(`assets/images/${artist}_detail_${index + 1}.png`)}
+                src={require(`assets/images/${id}_detail_1.png`)}
                 ratio='37.5%'
                 alt=''
               />
-            ))}
+              <img src={require(`assets/images/${id}_detail_2.png`)} alt='' width='100%' />
+            </>
+          )}
+
           <GuestBook />
         </StyledProject>
       </StyledRoot>

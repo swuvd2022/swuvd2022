@@ -7,11 +7,13 @@ export interface ProjectType {
   artist: string;
   email: string;
   description: string;
+  isImage?: boolean;
+  video?: string;
 }
 
 export interface Comment {
   id: number;
   name: string;
   message: string;
-  createdDate: string;
+  createDate: string;
 }

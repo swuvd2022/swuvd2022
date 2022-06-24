@@ -81,7 +81,7 @@ const GuestBook = () => {
             <StyledComment key={comment.id}>
               <StyledTop>
                 <span>{comment.name}</span>
-                <span>{comment.createdDate}</span>
+                <span>{comment.createDate}</span>
               </StyledTop>
               <StyledBottom>{comment.message}</StyledBottom>
             </StyledComment>

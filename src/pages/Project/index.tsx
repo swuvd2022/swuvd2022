@@ -34,17 +34,17 @@ function Project() {
           margin='15px 106px 0 0'
         />
         <StyledPreviewProjects>
-          {filteredProjects.map(project => (
-            <StyledLink key={project.id} to={`${project.id}`}>
+          {filteredProjects.map(({ id, title, artist }) => (
+            <StyledLink key={id} to={`${id}`}>
               <CroppedImage
-                src={require(`assets/images/${project.artist}_thumbnail.png`)}
+                src={require(`assets/images/${id}_thumbnail.png`)}
                 width='330px'
                 ratio='66.67%'
                 alt=''
               />
               <StyledHover>
-                <h3>{project.title}</h3>
-                <h4>{project.artist}</h4>
+                <h3>{title}</h3>
+                <h4>{artist}</h4>
               </StyledHover>
             </StyledLink>
           ))}
