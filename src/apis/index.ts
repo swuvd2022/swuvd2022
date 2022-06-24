@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-export const BASE_URL =
-  process.env.NODE_ENV === 'development'
-    ? process.env.REACT_APP_LOCAL_BASE_URL
-    : process.env.REACT_APP_PRODUCT_BASE_URL;
+export const BASE_URL = 'http://54.180.93.212:8080';
+// process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'http://54.180.93.212:8080';
 
 export const getComments = async (id: string) => {
   const response = await axios.get(`${BASE_URL}/guestbook?id=${id}`);
