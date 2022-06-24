@@ -18,7 +18,10 @@ const Gnb = () => {
     <StyledRoot>
       <StyledContainer>
         <StyledTop>
-          <h1>제39회 서울여자대학교 시각디자인전공 졸업전시회</h1>
+          <h1>
+            제39회 서울여자대학교 <br />
+            시각디자인전공 졸업전시회
+          </h1>
           <StyledNav>
             {Object.keys(navButtons).map(key => {
               if (key === 'Designer') {
