@@ -4,8 +4,8 @@ export interface ProjectType {
   id: number;
   title: string;
   kind: string;
-  artist: string;
-  email: string;
+  artist: string[];
+  email: string[];
   description: string;
   isImage?: boolean;
   video?: string;

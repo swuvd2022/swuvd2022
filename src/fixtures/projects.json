@@ -3,9 +3,9 @@
     "id": 1,
     "title": "서울여대",
     "kind": "UXUI",
-    "artist": "김의진",
-    "email": "gytks4@naver.com",
-    "description": "개발 재밌다!",
+    "artist": ["김의진", "장준혁", "이성현"],
+    "email": ["gytks4@naver.com", "gytks4@naver.com", "gytks4@naver.com"],
+    "description": "개발 재밌다!\n개발 재밌다!",
     "isImage": true,
     "video": "https://www.youtube.com/watch?v=wa6I_tqpvZU"
   }

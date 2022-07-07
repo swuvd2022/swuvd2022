@@ -20,8 +20,19 @@ const ProjectDetailMobile = () => {
       <StyledProject>
         <StyledTexts>
           <h3>{title}</h3>
-          <h4>{artist}</h4>
-          <p>{description}</p>
+          <div>
+            {artist.map((_, index) => (
+              <h4 key={index}>{artist[index]}</h4>
+            ))}
+          </div>
+          <p>
+            {description.split('\n').map(line => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </p>
         </StyledTexts>
         {video && (
           <CroppedVideo
@@ -69,6 +80,19 @@ const StyledTexts = styled.div`
   & > p {
     font-size: 14px;
     margin-bottom: 40px;
+  }
+
+  & > div {
+    display: flex;
+    margin-bottom: 26px;
+
+    & > h4 {
+      font-weight: 400;
+    }
+
+    & > h4 + h4 {
+      margin-left: 8px;
+    }
   }
 `;
 

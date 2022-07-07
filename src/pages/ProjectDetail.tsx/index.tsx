@@ -34,10 +34,21 @@ const ProjectDetail = () => {
           <StyledTexts>
             <StyledLeft>
               <h3>{title}</h3>
-              <h4>{artist}</h4>
-              <div>{email}</div>
+              {artist.map((_, index) => (
+                <div key={index}>
+                  <h4>{artist[index]}</h4>
+                  <div>{email[index]}</div>
+                </div>
+              ))}
             </StyledLeft>
-            <p>{description}</p>
+            <p>
+              {description.split('\n').map(line => (
+                <span key={line}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </p>
           </StyledTexts>
           {video && (
             <CroppedVideo
@@ -94,7 +105,11 @@ const StyledLeft = styled.div`
     font-weight: 700;
     margin-bottom: 20px;
   }
-  & > h4 {
+  & > div > h4 {
     margin-bottom: 6px;
+  }
+
+  & > div + div {
+    margin-top: 29px;
   }
 `;
