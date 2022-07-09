@@ -37,13 +37,9 @@ const ProjectDetailMobile = () => {
             ))}
           </p>
         </StyledTexts>
+        {isImage && <CroppedImage src={`../images/${id}_detail_1.png`} ratio='37.5%' alt='' />}
         {video && <CroppedVideo width='100%' ratio='56.25%' src={video} />}
-        {isImage && (
-          <>
-            <CroppedImage src={`../images/${id}_detail_1.png`} ratio='37.5%' alt='' />
-            <img src={`../images/${id}_detail_2.png`} alt='' width='100%' />
-          </>
-        )}
+        {isImage && <img src={`../images/${id}_detail_2.png`} alt='' width='100%' />}
         <GuestBook />
       </StyledProject>
     </PageTemplate>
