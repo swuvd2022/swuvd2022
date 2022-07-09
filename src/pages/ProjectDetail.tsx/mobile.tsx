@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import projects from 'fixtures/projects.json';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
 import CroppedVideo from 'components/common/CroppedVideo';
+import { getDesignerByName } from 'util/designers';
 
 const ProjectDetailMobile = () => {
   const projectId = Number(useParams().projectId);
@@ -22,7 +23,9 @@ const ProjectDetailMobile = () => {
           <h3>{title}</h3>
           <div>
             {artist.map((_, index) => (
-              <h4 key={index}>{artist[index]}</h4>
+              <Link key={index} to={`/designer/${getDesignerByName(artist[index]).id}`}>
+                <h4>{artist[index]}</h4>
+              </Link>
             ))}
           </div>
           <p>

@@ -3,13 +3,14 @@ import Categories from 'components/common/Categories';
 import { useRecoilState } from 'recoil';
 import { projectKind } from 'types/domain';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import projects from 'fixtures/projects.json';
 import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
 import CroppedVideo from 'components/common/CroppedVideo';
+import { getDesignerByName } from 'util/designers';
 
 const ProjectDetail = () => {
   const projectId = Number(useParams().projectId);
@@ -36,7 +37,9 @@ const ProjectDetail = () => {
               <h3>{title}</h3>
               {artist.map((_, index) => (
                 <div key={index}>
-                  <h4>{artist[index]}</h4>
+                  <Link to={`/designer/${getDesignerByName(artist[index]).id}`}>
+                    <h4>{artist[index]}</h4>
+                  </Link>
                   <div>{email[index]}</div>
                 </div>
               ))}
