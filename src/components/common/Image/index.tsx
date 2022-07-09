@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 const StyledImage = styled.img<{ isLoad: boolean; aspectRatio: string }>`
@@ -36,6 +36,10 @@ function Image({ src, alt, aspectRatio = '16/9' }: ImagePropsType) {
   const onImageError = () => {
     setIsError(true);
   };
+
+  useEffect(() => {
+    setIsError(false);
+  }, [src]);
 
   return isError ? (
     <StyledPlaceholder aspectRatio={aspectRatio} />
