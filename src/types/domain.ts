@@ -1,4 +1,4 @@
-export const projectKind = ['All', 'UXUI', '브랜딩', '그래픽', '출판', '영상', '기타'] as const;
+export const projectKind = ['All', 'UXUI', '브랜딩', '출판', '영상', '기타'] as const;
 
 export interface ProjectType {
   id: number;
