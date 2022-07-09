@@ -50,21 +50,11 @@ const ProjectDetail = () => {
               ))}
             </p>
           </StyledTexts>
-          {video && (
-            <CroppedVideo
-              width='100%'
-              ratio='56.25%'
-              src='https://www.youtube.com/embed/wa6I_tqpvZU'
-            />
-          )}
+          {video && <CroppedVideo width='100%' ratio='56.25%' src={video} />}
           {isImage && (
             <>
-              <CroppedImage
-                src={require(`assets/images/${id}_detail_1.png`)}
-                ratio='37.5%'
-                alt=''
-              />
-              <img src={require(`assets/images/${id}_detail_2.png`)} alt='' width='100%' />
+              <CroppedImage src={`../images/${id}_detail_1.png`} ratio='37.5%' alt='' />
+              <img src={`../images/${id}_detail_2.png`} alt='' width='100%' />
             </>
           )}
 
@@ -104,6 +94,10 @@ const StyledLeft = styled.div`
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
+    width: 100%;
+    margin-right: 100px;
+    overflow: hidden;
+    white-space: nowrap;
   }
   & > div > h4 {
     margin-bottom: 6px;

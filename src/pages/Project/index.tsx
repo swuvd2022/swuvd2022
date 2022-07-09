@@ -37,7 +37,7 @@ function Project() {
           {filteredProjects.map(({ id, title, artist }) => (
             <StyledLink key={id} to={`${id}`}>
               <CroppedImage
-                src={require(`assets/images/${id}_thumbnail.png`)}
+                src={`../images/${id}_thumbnail.png`}
                 width='330px'
                 ratio='66.67%'
                 alt=''
