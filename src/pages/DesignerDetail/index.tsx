@@ -52,8 +52,8 @@ function DesignerDetail() {
         </StyledSection>
       </StyledInformationWrapper>
       <StyledImageWrapper>
-        <Image src={image_1} alt='이미지' />
-        <Image src={image_2} alt='이미지' />
+        {image_1.length !== 0 && <Image src={image_1} alt='이미지' />}
+        {image_2.length !== 0 && <Image src={image_2} alt='이미지' />}
       </StyledImageWrapper>
     </StyledWrapper>
   );
