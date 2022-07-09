@@ -44,7 +44,14 @@ function Project() {
               />
               <StyledHover>
                 <h3>{title}</h3>
-                <h4>{artist}</h4>
+                <div>
+                  {artist.map((el, index) => (
+                    <h4 key={el}>
+                      {el}
+                      {artist.length - 1 !== index && ','}&nbsp;
+                    </h4>
+                  ))}
+                </div>
               </StyledHover>
             </StyledLink>
           ))}
@@ -106,7 +113,8 @@ const StyledHover = styled.div`
     font-weight: 700;
   }
 
-  & > h4 {
+  & > div > h4 {
+    display: inline-block;
     font-size: 14px;
   }
 `;
