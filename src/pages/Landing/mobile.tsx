@@ -183,7 +183,7 @@ function LandingMobile() {
     <PageTemplate>
       <Container>
         <FirstWrapper>
-          <img src='../images/모바일_2.png' alt='이미지' />
+          <img src='../images/세로.png' alt='이미지' />
 
           <화살표모바일 />
         </FirstWrapper>
