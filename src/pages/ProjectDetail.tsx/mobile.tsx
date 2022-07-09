@@ -84,11 +84,11 @@ const StyledTexts = styled.div`
     display: flex;
     margin-bottom: 26px;
 
-    & > h4 {
+    & > a > h4 {
       font-weight: 400;
     }
 
-    & > h4 + h4 {
+    & > a + a {
       margin-left: 8px;
     }
   }
