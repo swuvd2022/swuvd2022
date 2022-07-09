@@ -42,7 +42,14 @@ const ProjectMobile = () => {
                 alt=''
               />
               <h3>{title}</h3>
-              <h4>{artist}</h4>
+              <div>
+                {artist.map((el, index) => (
+                  <h4 key={el}>
+                    {el}
+                    {artist.length - 1 !== index && ','}&nbsp;
+                  </h4>
+                ))}
+              </div>
             </StyledLink>
           ))}
         </StyledPreviewProjects>
@@ -91,7 +98,8 @@ const StyledLink = styled(Link)`
     padding-left: 10px;
   }
 
-  & > h4 {
+  & > div > h4 {
     font-weight: 400;
+    display: inline-block;
   }
 `;
