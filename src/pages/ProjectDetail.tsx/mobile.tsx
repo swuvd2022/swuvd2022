@@ -93,14 +93,3 @@ const StyledTexts = styled.div`
     }
   }
 `;
-
-// const StyledLeft = styled.div`
-//   & > h3 {
-//     font-size: 24px;
-//     font-weight: 700;
-//     margin-bottom: 20px;
-//   }
-//   & > h4 {
-//     margin-bottom: 6px;
-//   }
-// `;
