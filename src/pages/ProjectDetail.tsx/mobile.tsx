@@ -24,7 +24,7 @@ const ProjectDetailMobile = () => {
           <div>
             {artist.map((_, index) => (
               <Link key={index} to={`/designer/${getDesignerByName(artist[index]).id}`}>
-                <h4>{artist[index]}</h4>
+                <span>{artist[index]}</span>
               </Link>
             ))}
           </div>
@@ -71,10 +71,7 @@ const StyledTexts = styled.div`
     font-weight: 700;
     margin-bottom: 8px;
   }
-  & > h4 {
-    font-size: 14px;
-    margin-bottom: 30px;
-  }
+
   & > p {
     font-size: 14px;
     margin-bottom: 40px;
@@ -84,7 +81,8 @@ const StyledTexts = styled.div`
     display: flex;
     margin-bottom: 26px;
 
-    & > a > h4 {
+    & > a > span {
+      font-size: 14px;
       font-weight: 400;
     }
 

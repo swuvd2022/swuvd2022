@@ -38,7 +38,7 @@ const ProjectDetail = () => {
               {artist.map((_, index) => (
                 <div key={index}>
                   <Link to={`/designer/${getDesignerByName(artist[index]).id}`}>
-                    <h4>{artist[index]}</h4>
+                    <span>{artist[index]}</span>
                   </Link>
                   <div>{email[index]}</div>
                 </div>
@@ -102,7 +102,7 @@ const StyledLeft = styled.div`
     overflow: hidden;
     white-space: nowrap;
   }
-  & > div > a > h4 {
+  & > div > a > span {
     margin-bottom: 6px;
   }
 
