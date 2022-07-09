@@ -254,6 +254,6 @@ const StyledPlaceholder = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 14px;
   color: ${({ theme }) => theme.brandColor_2};
 `;
