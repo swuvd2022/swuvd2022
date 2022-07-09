@@ -8,12 +8,12 @@ import App from './components/App';
 import { GlobalStyle } from './styles/GlobalStyles';
 import theme from './styles/Theme';
 
-if (process.env.NODE_ENV === 'development') {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { worker } = require('./mocks/browser');
+// if (process.env.NODE_ENV === 'development') {
+//   // eslint-disable-next-line @typescript-eslint/no-var-requires
+//   const { worker } = require('./mocks/browser');
 
-  worker.start();
-}
+//   worker.start();
+// }
 
 const queryClient = new QueryClient();
 
