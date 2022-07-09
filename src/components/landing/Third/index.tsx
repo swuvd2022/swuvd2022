@@ -113,8 +113,8 @@ function Third() {
             <h2>지도교수</h2>
             <ProfessorList>
               <span>이재원 교수</span>
-              <span>이규학 교수</span>
-              <span>최창섭 교수</span>
+              <span>이규락 교수</span>
+              <span>최장섭 교수</span>
               <span>유영재 교수</span>
               <span>민병걸 교수</span>
               <span>한재준 교수</span>
