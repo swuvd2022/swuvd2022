@@ -54,6 +54,7 @@ const StyledProject = styled.div`
   overflow-y: scroll;
   overflow-x: scroll;
   padding: 0 20px 20px;
+  margin-bottom: 30px;
 `;
 
 const StyledTexts = styled.div`
