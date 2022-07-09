@@ -102,7 +102,7 @@ const StyledLeft = styled.div`
     overflow: hidden;
     white-space: nowrap;
   }
-  & > div > h4 {
+  & > div > a > h4 {
     margin-bottom: 6px;
   }
 
