@@ -88,7 +88,7 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 
   &:nth-of-type(odd) {
     padding-right: 10px;
