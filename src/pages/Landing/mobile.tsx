@@ -208,32 +208,46 @@ function LandingMobile() {
             <Title>참여학생</Title>
 
             <Grid>
+              <GridNameText>강례모</GridNameText>
+              <GridNameText>기유림</GridNameText>
+              <GridNameText>김서진</GridNameText>
+              <GridNameText>김수민</GridNameText>
               <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
-              <GridNameText>김수빈</GridNameText>
+              <GridNameText>김수현</GridNameText>
+              <GridNameText>김제균</GridNameText>
+              <GridNameText>김주연</GridNameText>
+              <GridNameText>김찬미</GridNameText>
+              <GridNameText>김희진</GridNameText>
+              <GridNameText>노은채</GridNameText>
+              <GridNameText>박온유</GridNameText>
+              <GridNameText>박채린</GridNameText>
+              <GridNameText>백송현</GridNameText>
+              <GridNameText>변아현</GridNameText>
+              <GridNameText>신재은</GridNameText>
+              <GridNameText>안예린</GridNameText>
+              <GridNameText>양현지</GridNameText>
+              <GridNameText>윤선희</GridNameText>
+              <GridNameText>이사라</GridNameText>
+              <GridNameText>이성현</GridNameText>
+              <GridNameText>이승미</GridNameText>
+              <GridNameText>이유빈</GridNameText>
+              <GridNameText>이윤주</GridNameText>
+              <GridNameText>이재연</GridNameText>
+              <GridNameText>이정진</GridNameText>
+              <GridNameText>이지나</GridNameText>
+              <GridNameText>이지민</GridNameText>
+              <GridNameText>이청아</GridNameText>
+              <GridNameText>이혜나</GridNameText>
+              <GridNameText>이혜지</GridNameText>
+              <GridNameText>이혜나</GridNameText>
+              <GridNameText>전혜정</GridNameText>
+              <GridNameText>정민혜</GridNameText>
+              <GridNameText>정연수</GridNameText>
+              <GridNameText>정희수</GridNameText>
+              <GridNameText>조유은</GridNameText>
+              <GridNameText>진영지</GridNameText>
+              <GridNameText>최유리</GridNameText>
+              <GridNameText>최혜수</GridNameText>
             </Grid>
           </section>
 
