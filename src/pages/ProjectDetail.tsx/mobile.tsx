@@ -71,6 +71,10 @@ const StyledTexts = styled.div`
   & > p {
     font-size: 14px;
     margin-bottom: 40px;
+
+    & > span {
+      line-height: 32px;
+    }
   }
 
   & > div {

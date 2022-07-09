@@ -104,8 +104,6 @@ const StyledHover = styled.div`
   & > h3 {
     font-size: 24px;
     font-weight: 700;
-    line-height: 60px;
-    height: 60px;
   }
 
   & > h4 {

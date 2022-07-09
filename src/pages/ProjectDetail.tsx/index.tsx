@@ -86,6 +86,10 @@ const StyledTexts = styled.div`
   justify-content: space-between;
   font-size: 14px;
   margin-bottom: 102px;
+
+  & > p > span {
+    line-height: 32px;
+  }
 `;
 
 const StyledLeft = styled.div`
