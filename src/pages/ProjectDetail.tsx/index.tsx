@@ -45,8 +45,8 @@ const ProjectDetail = () => {
               ))}
             </StyledLeft>
             <p>
-              {description.split('\n').map(line => (
-                <span key={line}>
+              {description.split('\n').map((line, index) => (
+                <span key={index}>
                   {line}
                   <br />
                 </span>
@@ -83,7 +83,6 @@ const StyledProject = styled.div`
 
 const StyledTexts = styled.div`
   display: flex;
-  justify-content: space-between;
   font-size: 14px;
   margin-bottom: 102px;
 
@@ -93,14 +92,13 @@ const StyledTexts = styled.div`
 `;
 
 const StyledLeft = styled.div`
+  margin-right: 170px;
+
   & > h3 {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
     width: 100%;
-    margin-right: 100px;
-    overflow: hidden;
-    white-space: nowrap;
   }
   & > div > a > span {
     margin-bottom: 6px;
