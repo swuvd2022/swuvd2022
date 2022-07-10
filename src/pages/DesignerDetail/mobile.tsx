@@ -1,9 +1,10 @@
-import { useParams } from 'react-router-dom';
+import CroppedImage from 'components/common/CroppedImage';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { InformationItem } from '.';
-import Image from '../../components/common/Image';
 import PageTemplate from '../../components/common/PageTemplate';
 import { getDesigner } from '../../util/designers';
+import projects from 'fixtures/projects.json';
 
 function DesignerDetailMobile() {
   const { designerId } = useParams();
@@ -14,7 +15,10 @@ function DesignerDetailMobile() {
     return <div>없어</div>;
   }
 
-  const { name, engName, email, insta, website, image_1, image_2 } = designer;
+  const { name, engName, email, insta, website, image_1, image_2, project_1, project_2 } = designer;
+
+  const { id: id1 } = projects.find(project => project.id === project_1);
+  const { id: id2 } = projects.find(project => project.id === project_2);
 
   return (
     <PageTemplate>
@@ -31,8 +35,26 @@ function DesignerDetailMobile() {
         </Section>
 
         <StyledImageWrapper>
-          <Image src={image_1} alt='이미지' />
-          <Image src={image_2} alt='이미지' />
+          {image_1.length !== 0 && (
+            <StyledLink key={id1} to={`/project/${id1}`}>
+              <CroppedImage
+                src={`../images/${id1}_thumbnail.png`}
+                width='100%'
+                ratio='66.67%'
+                alt=''
+              />
+            </StyledLink>
+          )}
+          {image_2.length !== 0 && (
+            <StyledLink key={id2} to={`/project/${id2}`}>
+              <CroppedImage
+                src={`../images/${id2}_thumbnail.png`}
+                width='100%'
+                ratio='66.67%'
+                alt=''
+              />
+            </StyledLink>
+          )}
         </StyledImageWrapper>
       </Container>
     </PageTemplate>
@@ -79,4 +101,9 @@ const StyledImageWrapper = styled.div`
 
     min-width: 300px;
   }
+`;
+
+const StyledLink = styled(Link)`
+  position: relative;
+  cursor: pointer;
 `;

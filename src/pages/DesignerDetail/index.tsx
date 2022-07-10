@@ -1,7 +1,6 @@
 import CroppedImage from 'components/common/CroppedImage';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import Image from '../../components/common/Image';
 import projects from 'fixtures/projects.json';
 import { getDesigner } from '../../util/designers';
 
