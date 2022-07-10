@@ -61,7 +61,7 @@ function Third() {
         <div>
           <h1>Thanks to</h1>
           <SubContentWrapper>
-            <h2>통합준비위원회</h2>
+            <h2>졸업준비위원회</h2>
             <PrepareWrapper>
               <div>
                 <NameTitleWrapper>
