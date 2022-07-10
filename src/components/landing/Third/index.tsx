@@ -77,11 +77,11 @@ function Third() {
               <div>
                 <NameTitleWrapper>
                   <h3>그래픽 팀장</h3>
-                  <span>이지나</span>
+                  <span>이정진</span>
                 </NameTitleWrapper>
                 <NameTitleWrapper>
                   <h3>도록 팀장</h3>
-                  <span>이재연</span>
+                  <span>양현지</span>
                 </NameTitleWrapper>
                 <NameTitleWrapper>
                   <h3>설치 팀장</h3>
@@ -212,9 +212,9 @@ const PrepareWrapper = styled.div`
   & > div {
     display: flex;
 
-    gap: 15px;
-
     flex-wrap: wrap;
+
+    gap: 50px;
   }
 `;
 
@@ -240,6 +240,10 @@ const ProfessorList = styled.div`
   grid-template-columns: repeat(3, 1fr);
 
   gap: 15px;
+
+  & > span {
+    display: inline;
+  }
 `;
 
 const DeveloperList = styled.div`
