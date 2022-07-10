@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_URL = 'http://54.180.93.212:8080';
+export const BASE_URL = 'http://54.180.87.149:8080';
 // process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : 'http://54.180.93.212:8080';
 
 export const getComments = async (id: string) => {
