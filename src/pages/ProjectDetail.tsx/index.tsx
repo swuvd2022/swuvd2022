@@ -99,6 +99,7 @@ const StyledLeft = styled.div`
     font-weight: 700;
     margin-bottom: 20px;
     width: 100%;
+    white-space: nowrap;
   }
   & > div > a > span {
     margin-bottom: 6px;
