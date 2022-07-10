@@ -61,9 +61,9 @@ function Third() {
         </div>
         <div>
           <h1>Thanks to</h1>
-          <SubContentWrapper>
-            <h2>졸업준비위원회</h2>
-            <PrepareWrapper>
+          <SubContentWrapper style={{ justifyContent: 'space-between' }}>
+            <h2 style={{ width: '30%' }}>졸업준비위원회</h2>
+            <PrepareWrapper style={{ width: '70%' }}>
               <div>
                 <NameTitleWrapper>
                   <h3>위원장</h3>
@@ -111,8 +111,8 @@ function Third() {
             </PrepareWrapper>
           </SubContentWrapper>
           <SubContentWrapper>
-            <h2>지도교수</h2>
-            <ProfessorList>
+            <h2 style={{ width: '30%' }}>지도교수</h2>
+            <ProfessorList style={{ width: '70%' }}>
               <span>이재원 교수</span>
               <span>이규락 교수</span>
               <span>최장섭 교수</span>
@@ -122,8 +122,8 @@ function Third() {
             </ProfessorList>
           </SubContentWrapper>
           <SubContentWrapper>
-            <h2>웹 사이트 제작</h2>
-            <DeveloperList>
+            <h2 style={{ width: '30%' }}>웹 사이트 제작</h2>
+            <DeveloperList style={{ width: '70%' }}>
               <DeveloperListWrapper>
                 <h3>디자인</h3>
                 <span>김수빈</span>
@@ -148,7 +148,7 @@ function Third() {
 const ThirdWrapper = styled.div`
   display: flex;
   min-height: 100vh;
-  min-width: 900px;
+  min-width: 1100px;
 
   padding: 0 50px;
 
@@ -159,6 +159,8 @@ const ThirdWrapper = styled.div`
 
     & > h1 {
       font-size: 1.5rem;
+
+      margin-bottom: 40px;
     }
 
     gap: 50px;
