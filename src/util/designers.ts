@@ -7,7 +7,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/1_thumbnail.png',
+    project_1: 1,
     image_2: '../images/2_thumbnail.png',
+    project_2: 2,
   },
   {
     id: '2',
@@ -17,7 +19,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/3_thumbnail.png',
+    project_1: 3,
     image_2: '../images/4_thumbnail.png',
+    project_2: 4,
   },
   {
     id: '3',
@@ -27,7 +31,9 @@ export const designers = [
     insta: '4.s2ojin_k1m',
     website: '',
     image_1: '../images/5_thumbnail.png',
+    project_1: 5,
     image_2: '../images/6_thumbnail.png',
+    project_2: 6,
   },
   {
     id: '4',
@@ -37,7 +43,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/7_thumbnail.png',
+    project_1: 7,
     image_2: '../images/8_thumbnail.png',
+    project_2: 8,
   },
   {
     id: '5',
@@ -47,7 +55,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/9_thumbnail.png',
+    project_1: 9,
     image_2: '../images/10_thumbnail.png',
+    project_2: 10,
   },
   {
     id: '6',
@@ -57,7 +67,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/8_thumbnail.png',
+    project_1: 8,
     image_2: '../images/11_thumbnail.png',
+    project_2: 11,
   },
   {
     id: '7',
@@ -67,7 +79,9 @@ export const designers = [
     insta: 'mic_ell7',
     website: '',
     image_1: '../images/12_thumbnail.png',
+    project_1: 12,
     image_2: '../images/13_thumbnail.png',
+    project_2: 13,
   },
   {
     id: '8',
@@ -77,7 +91,9 @@ export const designers = [
     insta: 'zeze_624',
     website: 'https://notefolio.net/zeze624',
     image_1: '../images/14_thumbnail.png',
+    project_1: 14,
     image_2: '../images/15_thumbnail.png',
+    project_2: 15,
   },
   {
     id: '9',
@@ -87,7 +103,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/2_thumbnail.png',
+    project_1: 2,
     image_2: '../images/16_thumbnail.png',
+    project_2: 16,
   },
   {
     id: '10',
@@ -97,7 +115,9 @@ export const designers = [
     insta: '_chanmikim_',
     website: 'https://chansdesign.myportfolio.com/',
     image_1: '../images/17_thumbnail.png',
+    project_1: 17,
     image_2: '../images/18_thumbnail.png',
+    project_2: 18,
   },
   {
     id: '11',
@@ -107,7 +127,9 @@ export const designers = [
     insta: 'white_jin_',
     website: '',
     image_1: '../images/19_thumbnail.png',
+    project_1: 19,
     image_2: '../images/20_thumbnail.png',
+    project_2: 20,
   },
   {
     id: '12',
@@ -117,7 +139,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/21_thumbnail.png',
+    project_1: 21,
     image_2: '../images/22_thumbnail.png',
+    project_2: 22,
   },
   {
     id: '13',
@@ -127,7 +151,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/13_thumbnail.png',
+    project_1: 13,
     image_2: '../images/23_thumbnail.png',
+    project_2: 23,
   },
   {
     id: '14',
@@ -137,7 +163,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/24_thumbnail.png',
+    project_1: 24,
     image_2: '../images/25_thumbnail.png',
+    project_2: 25,
   },
   {
     id: '15',
@@ -147,7 +175,9 @@ export const designers = [
     insta: '_pickax',
     website: '',
     image_1: '../images/20_thumbnail.png',
+    project_1: 20,
     image_2: '../images/26_thumbnail.png',
+    project_2: 26,
   },
   {
     id: '16',
@@ -157,7 +187,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/27_thumbnail.png',
+    project_1: 27,
     image_2: '../images/28_thumbnail.png',
+    project_2: 28,
   },
   {
     id: '17',
@@ -167,7 +199,9 @@ export const designers = [
     insta: 'jaeeun.ss',
     website: '',
     image_1: '../images/29_thumbnail.png',
+    project_1: 29,
     image_2: '../images/30_thumbnail.png',
+    project_2: 30,
   },
   {
     id: '18',
@@ -177,7 +211,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/18_thumbnail.png',
+    project_1: 18,
     image_2: '../images/31_thumbnail.png',
+    project_2: 31,
   },
   {
     id: '19',
@@ -187,7 +223,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/32_thumbnail.png',
+    project_1: 32,
     image_2: '../images/33_thumbnail.png',
+    project_2: 33,
   },
   {
     id: '20',
@@ -197,7 +235,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/34_thumbnail.png',
+    project_1: 34,
     image_2: '../images/35_thumbnail.png',
+    project_2: 35,
   },
   {
     id: '21',
@@ -207,7 +247,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/30_thumbnail.png',
+    project_1: 30,
     image_2: '../images/36_thumbnail.png',
+    project_2: 36,
   },
   {
     id: '22',
@@ -217,7 +259,9 @@ export const designers = [
     insta: 'leesaraart',
     website: '',
     image_1: '../images/37_thumbnail.png',
+    project_1: 37,
     image_2: '../images/38_thumbnail.png',
+    project_2: 38,
   },
   {
     id: '23',
@@ -227,7 +271,9 @@ export const designers = [
     insta: 'wolfhoo',
     website: 'https://www.behance.net/a01090155871a9, https://notefolio.net/leesh_',
     image_1: '../images/39_thumbnail.png',
+    project_1: 39,
     image_2: '../images/40_thumbnail.png',
+    project_2: 40,
   },
   {
     id: '24',
@@ -237,7 +283,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/9_thumbnail.png',
+    project_1: 9,
     image_2: '../images/10_thumbnail.png',
+    project_2: 10,
   },
   {
     id: '25',
@@ -247,7 +295,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/41_thumbnail.png',
+    project_1: 41,
     image_2: '../images/42_thumbnail.png',
+    project_2: 42,
   },
   {
     id: '26',
@@ -257,7 +307,9 @@ export const designers = [
     insta: 'yoon.ee.cone',
     website: 'https://notefolio.net/yoonz, https://www.behance.net/yoonjoo_',
     image_1: '../images/43_thumbnail.png',
+    project_1: 43,
     image_2: '../images/44_thumbnail.png',
+    project_2: 44,
   },
   {
     id: '27',
@@ -267,7 +319,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/35_thumbnail.png',
+    project_1: 35,
     image_2: '../images/45_thumbnail.png',
+    project_2: 45,
   },
   {
     id: '28',
@@ -277,7 +331,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/46_thumbnail.png',
+    project_1: 46,
     image_2: '../images/47_thumbnail.png',
+    project_2: 47,
   },
   {
     id: '29',
@@ -287,7 +343,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/47_thumbnail.png',
+    project_1: 47,
     image_2: '../images/48_thumbnail.png',
+    project_2: 48,
   },
   {
     id: '30',
@@ -297,7 +355,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/49_thumbnail.png',
+    project_1: 49,
     image_2: '../images/50_thumbnail.png',
+    project_2: 50,
   },
   {
     id: '31',
@@ -307,7 +367,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/9_thumbnail.png',
+    project_1: 9,
     image_2: '../images/10_thumbnail.png',
+    project_2: 10,
   },
   {
     id: '32',
@@ -317,7 +379,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/51_thumbnail.png',
+    project_1: 51,
     image_2: '../images/52_thumbnail.png',
+    project_2: 52,
   },
   {
     id: '33',
@@ -327,7 +391,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/47_thumbnail.png',
+    project_1: 47,
     image_2: '../images/53_thumbnail.png',
+    project_2: 53,
   },
   {
     id: '34',
@@ -337,7 +403,9 @@ export const designers = [
     insta: 'full_moo0n_p',
     website: 'https://fullmoo0n.myportfolio.com',
     image_1: '../images/6_thumbnail.png',
+    project_1: 6,
     image_2: '../images/54_thumbnail.png',
+    project_2: 54,
   },
   {
     id: '35',
@@ -357,7 +425,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/55_thumbnail.png',
+    project_1: 55,
     image_2: '../images/56_thumbnail.png',
+    project_2: 56,
   },
   {
     id: '37',
@@ -367,7 +437,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/57_thumbnail.png',
+    project_1: 57,
     image_2: '../images/58_thumbnail.png',
+    project_2: 58,
   },
   {
     id: '38',
@@ -377,7 +449,9 @@ export const designers = [
     insta: 'uissilveritme',
     website: '',
     image_1: '../images/59_thumbnail.png',
+    project_1: 59,
     image_2: '../images/60_thumbnail.png',
+    project_2: 60,
   },
   {
     id: '39',
@@ -387,7 +461,9 @@ export const designers = [
     insta: '',
     website: '',
     image_1: '../images/52_thumbnail.png',
+    project_1: 52,
     image_2: '../images/61_thumbnail.png',
+    project_2: 61,
   },
   {
     id: '40',
@@ -397,7 +473,9 @@ export const designers = [
     insta: 'yuuu_uuuls',
     website: '',
     image_1: '../images/62_thumbnail.png',
+    project_1: 62,
     image_2: '../images/63_thumbnail.png',
+    project_2: 63,
   },
   {
     id: '41',
@@ -407,7 +485,9 @@ export const designers = [
     insta: 'hsoooh.ae',
     website: '',
     image_1: '../images/64_thumbnail.png',
+    project_1: 64,
     image_2: '../images/65_thumbnail.png',
+    project_2: 65,
   },
 ];
 
