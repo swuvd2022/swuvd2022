@@ -6,7 +6,7 @@ import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
 import CroppedVideo from 'components/common/CroppedVideo';
-import { getDesignerByName } from 'util/designers';
+import { getDesignerByEmail } from 'util/designers';
 
 const ProjectDetailMobile = () => {
   const projectId = Number(useParams().projectId);
@@ -14,7 +14,7 @@ const ProjectDetailMobile = () => {
   const project = projects.find(project => project.id === projectId);
   if (!project) return <NotFound />;
 
-  const { id, title, artist, description, video, isImage } = project;
+  const { id, title, email, artist, description, video, isImage } = project;
 
   return (
     <PageTemplate>
@@ -23,7 +23,7 @@ const ProjectDetailMobile = () => {
           <h3>{title}</h3>
           <div>
             {artist.map((_, index) => (
-              <Link key={index} to={`/designer/${getDesignerByName(artist[index]).id}`}>
+              <Link key={index} to={`/designer/${getDesignerByEmail(email[index]).id}`}>
                 <span>{artist[index]}</span>
               </Link>
             ))}

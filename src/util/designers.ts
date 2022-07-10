@@ -497,3 +497,6 @@ export const getDesigner = designerId => {
 
 export const getDesignerByName = designerName =>
   designers.find(({ name }) => name === designerName);
+
+export const getDesignerByEmail = designerEmail =>
+  designers.find(({ email }) => email === designerEmail);

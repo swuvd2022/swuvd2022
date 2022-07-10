@@ -10,7 +10,7 @@ import CroppedImage from 'components/common/CroppedImage';
 import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
 import CroppedVideo from 'components/common/CroppedVideo';
-import { getDesignerByName } from 'util/designers';
+import { getDesignerByEmail } from 'util/designers';
 
 const ProjectDetail = () => {
   const projectId = Number(useParams().projectId);
@@ -37,7 +37,7 @@ const ProjectDetail = () => {
               <h3>{title}</h3>
               {artist.map((_, index) => (
                 <div key={index}>
-                  <Link to={`/designer/${getDesignerByName(artist[index]).id}`}>
+                  <Link to={`/designer/${getDesignerByEmail(email[index]).id}`}>
                     <span>{artist[index]}</span>
                   </Link>
                   <div>{email[index]}</div>
