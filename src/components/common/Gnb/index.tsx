@@ -66,12 +66,12 @@ export default Gnb;
 
 const StyledRoot = styled.div`
   height: 100%;
-  width: 348px;
+  min-width: 348px;
 `;
 
 const StyledContainer = styled.div`
   height: 100%;
-  width: 348px;
+  width: 100%;
   padding: 40px;
   color: ${({ theme }) => theme.brandColor_1};
   background-color: ${({ theme }) => theme.brandColor_3};
@@ -91,6 +91,7 @@ const StyledTop = styled.div`
     font-size: inherit;
     margin-top: 0;
     margin-bottom: 40px;
+    white-space: nowrap;
   }
 `;
 
