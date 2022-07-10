@@ -20,6 +20,7 @@ function Third() {
               <span>김서진</span>
               <span>김수민</span>
               <span>김수빈</span>
+              <span>김수빈</span>
               <span>김수현</span>
               <span>김제균</span>
               <span>김주연</span>

@@ -213,6 +213,7 @@ function LandingMobile() {
               <GridNameText>김서진</GridNameText>
               <GridNameText>김수민</GridNameText>
               <GridNameText>김수빈</GridNameText>
+              <GridNameText>김수빈</GridNameText>
               <GridNameText>김수현</GridNameText>
               <GridNameText>김제균</GridNameText>
               <GridNameText>김주연</GridNameText>
@@ -326,7 +327,7 @@ function LandingMobile() {
               </div>
             </ProfessorContainer>
 
-            <Title>웹사이트 개발</Title>
+            <Title>웹사이트 제작</Title>
 
             <DeveloperContainer>
               <div>
