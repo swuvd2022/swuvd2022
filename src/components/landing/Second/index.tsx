@@ -8,8 +8,10 @@ const SecondWrapper = styled.div`
   min-width: 900px;
 
   & > img {
-    width: 50%;
-    object-fit: fill;
+    /* width: 50%; */
+    aspect-ratio: 6.9/10;
+    object-fit: cover;
+    object-position: top;
   }
 
   animation: fade 1s ease-in;
