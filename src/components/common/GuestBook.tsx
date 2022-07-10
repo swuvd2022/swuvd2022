@@ -28,7 +28,7 @@ const GuestBook = () => {
   const { mutate } = useMutation(addComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(['comment', id]);
-      handleChange(Math.floor(comments?.length / p_count) + 1)();
+      handleChange(1)();
     },
   });
   const lastIndex = Math.floor((comments?.length - 1) / p_count) + 1;
