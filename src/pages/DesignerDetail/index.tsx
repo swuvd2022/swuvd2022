@@ -40,16 +40,8 @@ function DesignerDetail() {
 
   const { name, engName, email, insta, website, image_1, image_2, project_1, project_2 } = designer;
 
-  const {
-    id: id1,
-    title: title1,
-    artist: artist1,
-  } = projects.find(project => project.id === project_1);
-  const {
-    id: id2,
-    title: title2,
-    artist: artist2,
-  } = projects.find(project => project.id === project_2);
+  const project1 = projects.find(project => project.id === project_1);
+  const project2 = projects.find(project => project.id === project_2);
 
   return (
     <StyledWrapper>
@@ -65,20 +57,20 @@ function DesignerDetail() {
       </StyledInformationWrapper>
       <StyledImageWrapper>
         {image_1.length !== 0 && (
-          <StyledLink key={id1} to={`/project/${id1}`}>
+          <StyledLink key={project1.id} to={`/project/${project1.id}`}>
             <CroppedImage
-              src={`../images/${id1}_thumbnail.png`}
+              src={`../images/${project1.id}_thumbnail.png`}
               width='330px'
               ratio='66.67%'
               alt=''
             />
             <StyledHover>
-              <h3>{title1}</h3>
+              <h3>{project1.title}</h3>
               <div>
-                {artist1.map((el, index) => (
+                {project1.artist.map((el, index) => (
                   <h4 key={el}>
                     {el}
-                    {artist1.length - 1 !== index && ','}&nbsp;
+                    {project1.artist.length - 1 !== index && ','}&nbsp;
                   </h4>
                 ))}
               </div>
@@ -86,20 +78,20 @@ function DesignerDetail() {
           </StyledLink>
         )}
         {image_2.length !== 0 && (
-          <StyledLink key={id2} to={`/project/${id2}`}>
+          <StyledLink key={project2.id} to={`/project/${project2.id}`}>
             <CroppedImage
-              src={`../images/${id2}_thumbnail.png`}
+              src={`../images/${project2.id}_thumbnail.png`}
               width='330px'
               ratio='66.67%'
               alt=''
             />
             <StyledHover>
-              <h3>{title2}</h3>
+              <h3>{project2.title}</h3>
               <div>
-                {artist2.map((el, index) => (
+                {project2.artist.map((el, index) => (
                   <h4 key={el}>
                     {el}
-                    {artist2.length - 1 !== index && ','}&nbsp;
+                    {project2.artist.length - 1 !== index && ','}&nbsp;
                   </h4>
                 ))}
               </div>

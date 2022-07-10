@@ -17,8 +17,8 @@ function DesignerDetailMobile() {
 
   const { name, engName, email, insta, website, image_1, image_2, project_1, project_2 } = designer;
 
-  const { id: id1 } = projects.find(project => project.id === project_1);
-  const { id: id2 } = projects.find(project => project.id === project_2);
+  const project1 = projects.find(project => project.id === project_1);
+  const project2 = projects.find(project => project.id === project_2);
 
   return (
     <PageTemplate>
@@ -36,9 +36,9 @@ function DesignerDetailMobile() {
 
         <StyledImageWrapper>
           {image_1.length !== 0 && (
-            <StyledLink key={id1} to={`/project/${id1}`}>
+            <StyledLink key={project1.id} to={`/project/${project1.id}`}>
               <CroppedImage
-                src={`../images/${id1}_thumbnail.png`}
+                src={`../images/${project1.id}_thumbnail.png`}
                 width='100%'
                 ratio='66.67%'
                 alt=''
@@ -46,9 +46,9 @@ function DesignerDetailMobile() {
             </StyledLink>
           )}
           {image_2.length !== 0 && (
-            <StyledLink key={id2} to={`/project/${id2}`}>
+            <StyledLink key={project2.id} to={`/project/${project2.id}`}>
               <CroppedImage
-                src={`../images/${id2}_thumbnail.png`}
+                src={`../images/${project2.id}_thumbnail.png`}
                 width='100%'
                 ratio='66.67%'
                 alt=''
