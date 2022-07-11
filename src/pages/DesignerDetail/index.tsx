@@ -119,25 +119,23 @@ const StyledWrapper = styled.div`
 const StyledInformationWrapper = styled.div`
   display: flex;
 
-  gap: 20px;
-
   width: 100%;
 `;
 
 const StyledSection = styled.div`
+  width: 50%;
   display: flex;
   flex-direction: column;
 
   gap: 28px;
 
-  flex: 1;
+  word-wrap: break-word;
 `;
 
 const StyledImageWrapper = styled.div`
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
 
   gap: 20px;
 

@@ -5,7 +5,7 @@ import 화살표 from '../../svg/화살표';
 const SecondWrapper = styled.div`
   display: flex;
   height: 100vh;
-  min-width: 900px;
+  min-width: 1100px;
 
   & > img {
     /* width: 50%; */
