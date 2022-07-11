@@ -226,6 +226,7 @@ function LandingMobile() {
               <GridNameText>변아현</GridNameText>
               <GridNameText>신재은</GridNameText>
               <GridNameText>안예린</GridNameText>
+              <GridNameText>안채희</GridNameText>
               <GridNameText>양현지</GridNameText>
               <GridNameText>윤선희</GridNameText>
               <GridNameText>이사라</GridNameText>
@@ -240,7 +241,6 @@ function LandingMobile() {
               <GridNameText>이청아</GridNameText>
               <GridNameText>이혜나</GridNameText>
               <GridNameText>이혜지</GridNameText>
-              <GridNameText>이혜나</GridNameText>
               <GridNameText>전혜정</GridNameText>
               <GridNameText>정민혜</GridNameText>
               <GridNameText>정연수</GridNameText>

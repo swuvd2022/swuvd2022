@@ -33,6 +33,7 @@ function Third() {
               <span>변아현</span>
               <span>신재은</span>
               <span>안예린</span>
+              <span>안채희</span>
               <span>양현지</span>
               <span>윤선희</span>
               <span>이사라</span>
@@ -47,7 +48,6 @@ function Third() {
               <span>이청아</span>
               <span>이혜나</span>
               <span>이혜지</span>
-              <span>이혜나</span>
               <span>전혜정</span>
               <span>정민혜</span>
               <span>정연수</span>
