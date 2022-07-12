@@ -17,8 +17,8 @@ import useResponsive from 'hooks/useResponsive';
 
 const GuestBook = () => {
   const { projectId: id } = useParams();
-  const [name, setName] = useInput();
-  const [message, setMessage] = useInput();
+  const [name, setName, onChangeName] = useInput();
+  const [message, setMessage, onChangeMessage] = useInput();
   const queryClient = useQueryClient();
   const { data: comments } = useQuery<Comment[]>(['comment', id], () => getComments(id));
 
@@ -29,6 +29,9 @@ const GuestBook = () => {
     onSuccess: () => {
       queryClient.invalidateQueries(['comment', id]);
       handleChange(1)();
+      setName('');
+      setMessage('');
+      alert('방명록이 등록되었습니다.');
     },
   });
   const lastIndex = Math.floor((comments?.length - 1) / p_count) + 1;
@@ -60,7 +63,7 @@ const GuestBook = () => {
             placeholder='이름'
             maxLength={10}
             value={name}
-            onChange={setName}
+            onChange={onChangeName}
             isDesktop={isDesktop}
             required
           />
@@ -68,7 +71,7 @@ const GuestBook = () => {
             placeholder='축하의 말을 남겨주세요.'
             maxLength={150}
             value={message}
-            onChange={setMessage}
+            onChange={onChangeMessage}
             isDesktop={isDesktop}
             required
           />

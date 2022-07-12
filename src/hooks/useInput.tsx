@@ -4,7 +4,7 @@ type onChangeFunc = (
   e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
 ) => void;
 
-const useInput = (): [string, onChangeFunc] => {
+const useInput = (): [string, React.Dispatch<React.SetStateAction<string>>, onChangeFunc] => {
   const [value, setValue] = useState('');
 
   const onChange = (
@@ -13,7 +13,7 @@ const useInput = (): [string, onChangeFunc] => {
     setValue(e.target.value);
   };
 
-  return [value, onChange];
+  return [value, setValue, onChange];
 };
 
 export default useInput;
