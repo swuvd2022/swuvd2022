@@ -56,7 +56,7 @@ const ProjectDetail = () => {
 
           {isImage && <CroppedImage src={`../images/${id}_detail_1.png`} ratio='37.5%' alt='' />}
           {video && <CroppedVideo width='100%' ratio='56.25%' src={video} />}
-          {isImage && <img src={`../images/${id}_detail_2.png`} alt='' width='100%' />}
+          {isImage && <img src={`../images/${id}_detail_2.jpg`} alt='' width='100%' />}
           <GuestBook />
         </StyledProject>
       </StyledRoot>
