@@ -3,7 +3,6 @@ import projects from 'fixtures/projects.json';
 import { Link, useParams } from 'react-router-dom';
 import NotFound from 'pages/NotFound/NotFound';
 import CroppedImage from 'components/common/CroppedImage';
-import GuestBook from 'components/common/GuestBook';
 import PageTemplate from 'components/common/PageTemplate';
 import CroppedVideo from 'components/common/CroppedVideo';
 import { getDesignerByEmail } from 'util/designers';
@@ -40,7 +39,7 @@ const ProjectDetailMobile = () => {
         {isImage && <CroppedImage src={`../images/${id}_detail_1.png`} ratio='37.5%' alt='' />}
         {video && <CroppedVideo width='100%' ratio='56.25%' src={video} />}
         {isImage && <img src={`../images/${id}_detail_2.jpg`} alt='' width='100%' />}
-        <GuestBook />
+        {/* <GuestBook /> */}
       </StyledProject>
     </PageTemplate>
   );
